@@ -1,0 +1,16 @@
+type: object
+properties:
+  q:
+    type: string
+    example: shawrapara
+  thana:
+    type: string
+    example: yes
+  district:
+    type: string
+    example: yes
+  bangla:
+    type: string
+    example: yes
+required: 
+  - q

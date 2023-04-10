@@ -1,0 +1,5 @@
+description: route_optimization_success
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/route_optimization_success.yaml'

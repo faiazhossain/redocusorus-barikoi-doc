@@ -1,0 +1,6 @@
+name: location_type
+in: query
+required: false
+schema:
+  type: boolean
+  description: location_type

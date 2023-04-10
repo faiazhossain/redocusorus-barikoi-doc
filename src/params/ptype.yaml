@@ -1,0 +1,6 @@
+name: ptype
+in: query
+required: true
+schema:
+  type: string
+  description: ptype

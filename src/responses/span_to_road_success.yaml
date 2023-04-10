@@ -1,0 +1,5 @@
+description: snap_to_road_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/snap_to_road_success.yaml

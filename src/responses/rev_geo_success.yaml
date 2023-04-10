@@ -1,0 +1,5 @@
+description: rev_geo_success
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/rev_geo_success.yaml'

@@ -1,0 +1,5 @@
+description: payment_exception
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/payment_exception.yaml'

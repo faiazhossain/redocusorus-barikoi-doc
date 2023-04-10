@@ -1,0 +1,7 @@
+name: points
+in: query
+required: true
+schema:
+  type: string
+  description: points
+  example: 90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658

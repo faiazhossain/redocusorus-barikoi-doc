@@ -1,0 +1,119 @@
+type: object
+properties: 
+  sorted_waypoints:
+    type: array
+    items:
+      - type: object
+        properties: 
+          point:
+            type: object
+            properties: 
+              lat:
+                type: number
+                example: 24.439648
+              lon:
+                type: number
+                example: 90.731277
+          additional_payload:
+            type: array
+            items: 
+              type: object
+              properties: 
+                address:
+                  type: string
+                  example: Kishoreganj Thana
+          index:
+            type: integer
+            example: 1
+      - type: object
+        properties: 
+          point:
+            type: object
+            properties: 
+              lat:
+                type: number
+                example: 24.440899
+              lon:
+                type: number
+                example: 90.771103
+          additional_payload:
+            type: array
+            items: 
+              type: object
+              properties: 
+                address:
+                  type: string
+                  example: Monju Villa, House 1244, Hossainpur Road, Nogua
+          index:
+            type: integer
+            example: 2
+      - type: object
+        properties: 
+          point:
+            type: object
+            properties: 
+              lat:
+                type: number
+                example: 23.74608583
+              lon:
+                type: number
+                example: 90.37368
+          additional_payload:
+            type: array
+            items: 
+              type: object
+              properties: 
+                address:
+                  type: string
+                  example: House 36, Road 9/A
+          index:
+            type: integer
+            example: 3
+      - type: object
+        properties: 
+          point:
+            type: object
+            properties: 
+              lat:
+                type: number
+                example: 23.74577034
+              lon:
+                type: number
+                example: 90.37338898
+          additional_payload:
+            type: array
+            items: 
+              type: object
+              properties: 
+                address:
+                  type: string
+                  example: House 38, Road 9/A
+          index:
+            type: integer
+            example: 4
+      - type: object
+        properties: 
+          point:
+            type: object
+            properties: 
+              lat:
+                type: number
+                example: 23.74441997
+              lon:
+                type: number
+                example: 90.37290861
+          additional_payload:
+            type: array
+            items: 
+              type: object
+              properties: 
+                address:
+                  type: string
+                  example: Dhanmondi, Road 8/a
+          index:
+            type: integer
+            example: 5
+  status:
+    type: integer
+    default: 200
+

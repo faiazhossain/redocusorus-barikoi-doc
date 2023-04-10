@@ -1,0 +1,134 @@
+type: object
+properties:
+  api_key:
+    type: string
+    example: <BARIKOI_API_KEY>
+  locations:
+    type: array
+    items:
+      - type: object
+        properties:
+          point:
+            type: object
+            properties:
+              lat:
+                type: number
+                example: 24.439648
+              lon:
+                type: number
+                example: 90.731277
+            required:
+              - lat
+              - lon
+          additional_payload:
+            type: array
+            items:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: Kishoreganj Thana
+        required:
+          - point
+      - type: object
+        properties:
+          point:
+            type: object
+            properties:
+              lat:
+                type: number
+                example: 23.74608583
+              lon:
+                type: number
+                example: 90.37368
+            required:
+              - lat
+              - lon
+          additional_payload:
+            type: array
+            items:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: House 36, Road 9/A
+        required:
+          - point
+      - type: object
+        properties:
+          point:
+            type: object
+            properties:
+              lat:
+                type: number
+                example: 24.440899
+              lon:
+                type: number
+                example: 90.771103
+            required:
+              - lat
+              - lon
+          additional_payload:
+            type: array
+            items:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: Monju Villa, House 1244, Hossainpur Road, Nogua
+        required:
+          - point
+      - type: object
+        properties:
+          point:
+            type: object
+            properties:
+              lat:
+                type: number
+                example: 23.74577034
+              lon:
+                type: number
+                example: 90.37338898
+            required:
+              - lat
+              - lon
+          additional_payload:
+            type: array
+            items:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: House 38, Road 9/A
+        required:
+          - point
+      - type: object
+        properties:
+          point:
+            type: object
+            properties:
+              lat:
+                type: number
+                example: 23.74441997
+              lon:
+                type: number
+                example: 90.37290861
+            required:
+              - lat
+              - lon
+          additional_payload:
+            type: array
+            items:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: Dhanmondi, Road 8/a
+        required:
+          - point
+required: 
+  - api_key
+  - locations
+
+
+  

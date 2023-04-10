@@ -1,0 +1,89 @@
+type: object
+properties:
+  code:
+    type: string
+    example: OK
+  routes:
+    type: array
+    items:
+      properties:
+        geometry:
+          type: string
+          description: The unsimplified geometry of the route segment, depending on the geometries parameter.
+          example: bqCmhpfPdMaDqEqO`U}MiFc`BueAjZonBlGisJs_@uh@gManAeJaaBzGsZbQ}v@jsAw`@jwAqt@p`BiBtjAvZzhAga@fAmXbQoi@mmA{vA~Ly`CfE
+        legs:
+          type: array
+          items:
+            type: object
+            properties:
+              steps:
+                type: array
+              distance:
+                type: number
+                description: The distance traveled by this route leg, in float meters.
+                example: 31580.5
+              duration:
+                type: number
+                description: The estimated travel time, in float number of seconds.
+                example: 5011.5
+              summary:
+                type: string
+                description: Summary of the route taken as string.
+              weight:
+                type: number
+                example: 5011.5
+        distance:
+          type: number
+          description: The distance of travel from the maneuver to the subsequent step, in float meters.
+          example: 31580.5
+        duration:
+          type: number
+          description: The estimated travel time, in float number of seconds.
+          example: 5011.5
+        weight_name:
+          type: string
+          example: routability
+        weight:
+          type: number
+          example: 5011.5
+  waypoints:
+    type: array
+    items:
+      - type: object
+        properties:
+          hint:
+            type: string
+            example: 1M4MgNbODIAAAAAAUQAAAAAAAABWAgAAAAAAAFZN10EAAAAA6SFHQwAAAABRAAAAAAAAAFYCAADlAAAA6tliBeZObQG10mIF1E9tAQAATwsayG8z
+          distance:
+            type: number
+            description: The distance of travel from the maneuver to the subsequent step, in float meters.
+            example: 189.684241
+          name:
+            type: string
+            example:
+          location:
+            type: array
+            items:
+              - type: number
+                example: 90.364394
+              - type: number
+                example: 23.940838
+      - type: object
+        properties:
+          hint:
+            type: string
+            example: iL0PgJa9D4CGAAAAVwAAAH8hAABcDAAAjQGVQqNFPkI1VJRFXcnaRIYAAABXAAAAfyEAAFwMAADlAAAAsjtiBbBHcAFRHGIFTkJwATMAnwoayG8z
+          distance:
+            type: number
+            description: The distance of travel from the maneuver to the subsequent step, in float meters.
+            example: 830.734383
+          name:
+            type: string
+            example: Mouchak - Fulbari Road
+          location:
+            type: array
+            items:
+              - type: number
+                example: 90.364394
+              - type: number
+                example: 23.940838

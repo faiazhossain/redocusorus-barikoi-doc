@@ -1,0 +1,38 @@
+type: object
+properties:
+  api_key:
+    type: string
+    example: <BARIKOI_API_KEY>
+  source:
+    type: string
+    description: Source point.
+    example: 23.746086,90.37368
+  destination:
+    type: string
+    description: Destination point.
+    example: 23.746214,90.371654
+  profile:
+    type: string
+    description: |+
+      Default: `car`
+      Specifies the vehicle profile of this type. The profile is used to determine the network, speed and other physical attributes to use for routing the vehicle or pedestrian. Valid profile values `bike`, `foot`.
+    example: car
+  geo_points:
+    type: array
+    description: array of point elements.
+    items:
+      properties:
+        id:
+          type: integer
+          example: 1
+        point:
+          type: string
+          example: 23.746086,90.37368
+      required:
+        - id
+        - point
+required:
+  - api_key
+  - source
+  - destination
+  - geo_points

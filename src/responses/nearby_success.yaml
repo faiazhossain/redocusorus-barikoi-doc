@@ -1,0 +1,5 @@
+description: nearby_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/nearby_success.yaml

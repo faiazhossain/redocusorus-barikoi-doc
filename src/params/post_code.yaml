@@ -1,0 +1,6 @@
+name: post_code
+in: query
+required: false
+schema:
+  type: boolean
+  description: post_code

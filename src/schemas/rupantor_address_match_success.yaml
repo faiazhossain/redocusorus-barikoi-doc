@@ -1,0 +1,23 @@
+type: object
+properties:
+  match:
+    type: object
+    properties:
+      address 1:
+        type: string
+        example: হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর
+      address 2:
+        type: string
+        example: house 18, road 5, block j, section 2, mirpur
+      address_short:
+        type: string
+        example: Shewrapara Koborsthan, East Shewrapara, Shewrapara
+      match percentage:
+        type: string
+        example: 100%
+      match status:
+        type: string
+        example: exact
+  status:
+    type: integer
+    default: 200

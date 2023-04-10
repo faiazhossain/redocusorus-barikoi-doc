@@ -1,0 +1,15 @@
+type: object
+properties:
+  coordinates:
+    type: array
+    items:
+      type: number
+      format: double
+    example: [90.36288202934098, 23.804755823392888]
+  distance:
+    type: number
+    format: double
+    example: 1.2604423448728288
+  type:
+    type: string
+    example: Point

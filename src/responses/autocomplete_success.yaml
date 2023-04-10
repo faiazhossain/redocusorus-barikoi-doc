@@ -1,0 +1,5 @@
+description: autocomplete_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/autocomplete_success.yaml

@@ -1,0 +1,5 @@
+description: route_match_success
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/route_match_success.yaml'

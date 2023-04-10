@@ -1,0 +1,6 @@
+name: area
+in: query
+required: false
+schema:
+  type: boolean
+  description: area

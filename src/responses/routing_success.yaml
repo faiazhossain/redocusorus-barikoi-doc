@@ -1,0 +1,5 @@
+description: routing_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/routing_success.yaml

@@ -1,0 +1,27 @@
+type: object
+properties:
+  q:
+    type: string
+    example: yes
+  q2:
+    type: string
+    example: yes
+  match:
+    type: string
+    example: yes
+  thana:
+    type: string
+    example: yes
+  district:
+    type: string
+    example: yes
+  bangla:
+    type: string
+    example: yes
+  zone:
+    type: boolean
+    example: true
+required: 
+  - q
+  - q2
+  - match

@@ -1,0 +1,5 @@
+description: rupantor_geocoder_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/rupantor_geocoder_success.yaml

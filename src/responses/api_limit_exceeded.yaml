@@ -1,0 +1,5 @@
+description: api_limit_exceeded
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/api_limit_exceeded.yaml

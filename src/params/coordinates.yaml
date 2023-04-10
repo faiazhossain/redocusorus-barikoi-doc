@@ -1,0 +1,6 @@
+name: coordinates
+in: path
+required: true
+schema:
+  type: string
+  description: String of format `{longitude},{latitude};{longitude},{latitude}`.

@@ -1,0 +1,68 @@
+type: object
+properties:
+  place:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 534001
+      distance_within_meters:
+        type: number
+        example: 3.9083
+      address:
+        type: string
+        example: হাউজ ২০, এভিনিউ ৩, লেন ২৫, ব্লক ডি, সেকশন ১১, মিরপুর
+      area:
+        type: string
+        example: মিরপুর
+      city:
+        type: string
+        example: ঢাকা
+      postCode:
+        type: integer
+        example: 1216
+      district:
+        type: string
+        example: ঢাকা
+      country:
+        type: string
+        example: বাংলাদেশ
+      sub_district:
+        type: string
+        example: পল্লবী
+      division:
+        type: string
+        example: ঢাকা
+      pauroshova:
+        type: string
+        example:
+      union:
+        type: string
+        example:
+      location_type:
+        type: string
+        example: শহর
+      address_components:
+        type: object
+        properties:
+          place_name:
+            type: string
+            example:
+          house:
+            type: string
+            example:
+          road:
+            type: string
+            example:
+      area_components:
+        type: object
+        properties:
+          area:
+            type: string
+            example: মিরপুর
+          sub_area:
+            type: string
+            example: Section 11
+  status:
+    type: integer
+    default: 200

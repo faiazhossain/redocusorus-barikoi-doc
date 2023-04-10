@@ -1,0 +1,5 @@
+description: rupantor_address_match_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/rupantor_address_match_success.yaml

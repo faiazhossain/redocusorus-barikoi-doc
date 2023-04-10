@@ -1,0 +1,6 @@
+name: pauroshova
+in: query
+required: false
+schema:
+  type: boolean
+  description: pauroshova

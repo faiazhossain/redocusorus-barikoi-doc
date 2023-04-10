@@ -1,0 +1,5 @@
+description: missing_parameter
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/missing_parameter.yaml'

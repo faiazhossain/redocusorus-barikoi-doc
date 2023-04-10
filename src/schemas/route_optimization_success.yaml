@@ -1,0 +1,123 @@
+type: object
+properties:
+  hints:
+    type: object
+    properties:
+      visited_nodes.sum:
+        type: integer
+        example: 50
+      visited_nodes.average:
+        type: integer
+        example: 10
+  info:
+    type: object
+    properties:
+      copyrights:
+        type: array
+        items:
+          type: string
+          example: GraphHopper
+      took:
+        type: number
+        example: 0
+  paths:
+    type: array
+    items:
+      type: object
+      properties:
+        distance:
+          type: number
+          format: double
+          description: The total distance, in meters.
+          example: 1846.266
+        weight:
+          type: number
+          format: double
+          example: 147.083567
+        time:
+          type: integer
+          format: int64
+          description: The total travel time, in milliseconds.
+          example: 147071
+        transfers:
+          type: number
+          example: 0
+        points_encoded:
+          type: boolean
+          description: |+
+            Whether the `points` and `snapped_waypoints` fields are polyline-encoded strings rather than JSON arrays of coordinates. See the field description for more information on the two formats.
+          example: true
+        bbox:
+          type: array
+          items:
+            type: number
+            format: double
+            description: |+
+              The bounding box of the route geometry. Format: [minLon, minLat, maxLon, maxLat].
+        points:
+          type: string
+          format: EncodedLineString (string) or LineString (object)
+          description: The geometry of the route. The format depends on the value of `points_encoded`.
+          example: c{|oCacrfPh@hA~B~ErCcBrGwD`Bw@rOkGDNyKtEiChAmIxE~@fB_AgB_L~GK[d@Y
+        instructions:
+          type: array
+          items:
+            type: object
+            properties:
+              distance:
+                type: number
+                format: double
+                description: |+
+                  The distance for this instruction, in meters.
+                example: 0
+              sign:
+                type: integer
+                format: int64
+                description: |+
+                  A number which specifies the sign to show.
+                example: 5
+              interval:
+                type: array
+                description: |+
+                  Two indices into `points`, referring to the beginning and the end of the segment of the route this instruction refers to.
+                items:
+                  type: integer
+                  format: int64
+                  example: 0
+              text:
+                type: string
+                description: |+
+                  A description what the user has to do in order to follow the route. The language depends on the locale parameter.
+                example: Waypoint 1
+              time:
+                type: integer
+                format: int32
+                description: |+
+                  The duration for this instruction, in milliseconds.
+                example: 0
+              street_name:
+                type: string
+                description: |+
+                  The name of the street to turn onto in order to follow the route.
+                example:
+
+        legs:
+          type: array
+        details:
+          type: object
+        ascend:
+          type: number
+          format: double
+          description: The total ascent, in meters.
+          example: 0
+        descend:
+          type: number
+          format: double
+          description: The total descent, in meters.
+          example: 0
+        snapped_waypoints:
+          type: string
+          format: EncodedLineString (string) or LineString (object)
+          description: |+
+            The snapped input points. The format depends on the value of `points_encoded`.
+          example: c{|oCacrfP??h@hArGzB|AtBeM`C

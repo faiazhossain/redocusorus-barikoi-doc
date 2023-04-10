@@ -1,0 +1,37 @@
+type: object
+properties:
+  places:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 882513
+        longitude:
+          type: number
+          example: 90.39752920000001
+        latitude:
+          type: number
+          example: 23.726055300000002
+        address:
+          type: string
+          example: Dhaka Medical College Hospital
+        city:
+          type: string
+          example: Dhaka
+        area:
+            type: string
+            example: Dhaka University Campus
+        postCode:
+          type: integer
+          example: 1000
+        pType:
+            type: string
+            example: Healthcare
+        uCode:
+          type: string
+          example: BXXK5816
+  status:
+    type: integer
+    default: 200

@@ -1,0 +1,71 @@
+type: object
+properties:
+  given_address:
+    type: string
+    example: shawrapara
+  fixed_address:
+    type: string
+    example: shewrapara
+  bangla_address:
+    type: string
+    example: শেওড়াপাড়া কবরস্থান, ইস্ট শেওড়াপাড়া, শেওড়াপাড়া, মিরপুর, ঢাকা
+  address_status:
+    type: string
+    example: incomplete
+  geocoded_address:
+    type: object
+    properties:
+      Address:
+        type: string
+        example: Shewrapara Koborsthan, East Shewrapara, Shewrapara, Mirpur, Dhaka
+      address_bn:
+        type: string
+        example: শেওড়াপাড়া কবরস্থান, ইস্ট শেওড়াপাড়া, শেওড়াপাড়া, মিরপুর, ঢাকা
+      address_short:
+        type: string
+        example: Shewrapara Koborsthan, East Shewrapara, Shewrapara
+      area:
+        type: string
+        example: Mirpur
+      city:
+        type: string
+        example: Dhaka
+      district:
+        type: string
+        example: Dhaka
+      holding_number:
+        type: string
+        example:
+      latitude:
+        type: number
+        example: 23.79175613
+      longitude:
+        type: number
+        example: 90.37567053
+      pType:
+        type: string
+        example: Religious Place
+      postCode:
+        type: integer
+        example: 1216
+      road_name_number:
+        type: string
+        example:
+      sub_area:
+        type: string
+        example: Shewrapara
+      thana:
+        type: string
+        example: Kafrul
+      uCode:
+        type: string
+        example: TOLJ0109
+      unions:
+        type: string
+        example:
+  confidence_score_percentage:
+    type: integer
+    example: 55
+  status:
+    type: integer
+    default: 200

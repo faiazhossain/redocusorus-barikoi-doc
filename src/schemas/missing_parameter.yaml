@@ -1,0 +1,8 @@
+type: object
+properties:
+  message:
+    type: string
+    default: 'Parameter missing'
+  status:
+    type: integer
+    default: 400

@@ -1,0 +1,7 @@
+name: geometries
+in: query
+required: false
+schema:
+  type: string
+  description: Returned route geometry format (influences overview and per step). Expected values are, `polyline`, `polyline6`, `geojson`
+  default: polyline

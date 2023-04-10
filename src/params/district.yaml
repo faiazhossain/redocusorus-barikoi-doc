@@ -1,0 +1,6 @@
+name: district
+in: query
+required: false
+schema:
+  type: boolean
+  description: district

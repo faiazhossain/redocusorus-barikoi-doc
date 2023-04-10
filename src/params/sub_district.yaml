@@ -1,0 +1,6 @@
+name: sub_district
+in: query
+required: false
+schema:
+  type: boolean
+  description: sub_district

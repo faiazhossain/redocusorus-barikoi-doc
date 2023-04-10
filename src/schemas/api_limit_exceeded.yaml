@@ -1,0 +1,8 @@
+type: object
+properties:
+  message:
+    type: string
+    default: 'API LIMIT EXCEEDED'
+  status:
+    type: integer
+    default: 429

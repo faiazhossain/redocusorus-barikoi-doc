@@ -1,0 +1,49 @@
+type: object
+properties:
+  places:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 4
+        name:
+          type: string
+          example: Uttara sector 12 Park
+        distance_in_meters:
+          type: number
+          example: 0.00045241879869987946
+        longitude:
+          type: number
+          example: 90.383051633835
+        latitude:
+          type: number
+          example: 23.871887192063
+        pType:
+          type: string
+          example: Recreation
+        Address:
+          type: string
+          example: Road 11, Sector 12
+        area:
+          type: string
+          example: Uttara
+        city:
+          type: string
+          example: Dhaka
+        postCode:
+          type: string
+          example: 1230
+        subType:
+          type: string
+          example: PARK
+        uCode:
+          type: string
+          example: OYFR1074
+        ST_AsText(location):
+          type: string
+          example: POINT(90.383051633835 23.871887192063)
+  status:
+    type: integer
+    default: 200

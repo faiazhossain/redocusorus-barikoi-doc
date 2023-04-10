@@ -1,0 +1,46 @@
+type: object
+properties:
+  places:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 635085
+        longitude:
+          type: number
+          example: 90.369999116958
+        latitude:
+          type: number
+          example: 23.83729875602
+        address:
+          type: string
+          example: Mirpur DOHS, Mirpur DOHS
+        address_bn:
+          type: string
+          example: মিরপুর ডিওএইচএস, মিরপুর ডিওএইচএস, মিরপুর, ঢাকা
+        city:
+          type: string
+          example: Dhaka
+        city_bn:
+          type: string
+          example: ঢাকা
+        area:
+            type: string
+            example: Dhaka University Campus
+        area_bn:
+          type: string
+          example: মিরপুর
+        postCode:
+          type: integer
+          example: 1216
+        pType:
+            type: string
+            example: Admin
+        uCode:
+          type: string
+          example: PFSU6037
+  status:
+    type: integer
+    default: 200

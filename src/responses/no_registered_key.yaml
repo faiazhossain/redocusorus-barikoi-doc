@@ -1,0 +1,5 @@
+description: no_registered_key
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/no_registered_key.yaml
