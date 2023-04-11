@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  favicon: "img/favicon.ico",
+  title: "BariKoi Documentation",
+  tagline: "Maps for Businesses",
+  favicon: "img/barikoi-logo.png",
 
   // Set the production url of your site here
   url: "https://your-docusaurus-test-site.com",
@@ -75,7 +75,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/bkoi-img.png",
       navbar: {
         title: "",
         logo: {
@@ -85,11 +85,6 @@ const config = {
         items: [
           { to: "/api", label: "API", position: "left" },
           { to: "/docs/maps-api", label: "Maps API", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
         ],
       },
       footer: {
