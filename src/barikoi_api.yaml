@@ -1,3 +1,11 @@
+routes:
+  - path: /home
+    component: Home
+  - path: /about
+    component: About
+  - path: /contact
+    component: Contact
+
 openapi: 3.0.0
 info:
   title: Barikoi Business API
@@ -9,6 +17,8 @@ info:
     # Introduction
 
     Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API Helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.
+
+
 
     # Overview
 
