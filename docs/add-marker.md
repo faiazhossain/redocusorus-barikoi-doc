@@ -1,29 +1,20 @@
 ---
-sidebar_label: "Add Maps Control"
-sidebar_position: 4
+sidebar_label: "Add Marker"
+sidebar_position: 5
 ---
 
 # Add Map Controls
 
-<iframe
-src="https://bkoi-gl-example-add-controls.surge.sh/" width="100%" height="280px" frameborder="0" style={{border: "1px solid black"}} allowfullscreen></iframe>
+<iframe src="https://bkoi-gl-example-add-marker.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
-Add Fullscreen Control
-
-```js
-map.addControl(new bkoigl.FullscreenControl());
-```
-
-Add Zoom Navigation Control
+Add Marker on Map load
 
 ```js
-map.addControl(new bkoigl.NavigationControl());
-```
-
-Add Map Scale Control
-
-```js
-map.addControl(new bkoigl.ScaleControl());
+map.on("load", () => {
+  const marker = new bkoigl.Marker({ draggable: true })
+    .setLngLat([90.3938010872331, 23.821600277500405])
+    .addTo(map);
+});
 ```
 
 # Full Source Code:
@@ -51,7 +42,7 @@ map.addControl(new bkoigl.ScaleControl());
         overflow: hidden;
       }
     </style>
-    <title>Add Controls</title>
+    <title>Add Marker To Map</title>
   </head>
   <body>
     <div id="map"></div>
@@ -64,15 +55,11 @@ map.addControl(new bkoigl.ScaleControl());
         zoom: 12,
       });
 
+      // Add Marker on Map Load
       map.on("load", () => {
-        // Add Fullscreen Control
-        map.addControl(new bkoigl.FullscreenControl());
-
-        // Add Zoom Navigation Control
-        map.addControl(new bkoigl.NavigationControl());
-
-        // Add Map Scale Control
-        map.addControl(new bkoigl.ScaleControl());
+        const marker = new bkoigl.Marker({ draggable: true })
+          .setLngLat([90.3938010872331, 23.821600277500405])
+          .addTo(map);
       });
     </script>
   </body>

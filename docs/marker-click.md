@@ -1,29 +1,24 @@
 ---
-sidebar_label: "Add Maps Control"
-sidebar_position: 4
+sidebar_label: "Add Marker on Map Click"
+sidebar_position: 7
 ---
 
-# Add Map Controls
+<iframe src="https://bkoi-gl-example-add-marker-on-click.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
-<iframe
-src="https://bkoi-gl-example-add-controls.surge.sh/" width="100%" height="280px" frameborder="0" style={{border: "1px solid black"}} allowfullscreen></iframe>
+##
 
-Add Fullscreen Control
-
-```js
-map.addControl(new bkoigl.FullscreenControl());
-```
-
-Add Zoom Navigation Control
+Register <span style={{color:"#e83e8c"}}>'click'</span> event and add <span style={{color:"#e83e8c"}}>marker</span>
 
 ```js
-map.addControl(new bkoigl.NavigationControl());
-```
-
-Add Map Scale Control
-
-```js
-map.addControl(new bkoigl.ScaleControl());
+map.on("load", () => {
+  // Register 'click' event
+  map.on("click", (e) => {
+    // Add Marker
+    const marker = new bkoigl.Marker({ draggable: true })
+      .setLngLat(e.lngLat)
+      .addTo(map);
+  });
+});
 ```
 
 # Full Source Code:
@@ -51,7 +46,7 @@ map.addControl(new bkoigl.ScaleControl());
         overflow: hidden;
       }
     </style>
-    <title>Add Controls</title>
+    <title>Add Marker on Map Click</title>
   </head>
   <body>
     <div id="map"></div>
@@ -65,14 +60,13 @@ map.addControl(new bkoigl.ScaleControl());
       });
 
       map.on("load", () => {
-        // Add Fullscreen Control
-        map.addControl(new bkoigl.FullscreenControl());
-
-        // Add Zoom Navigation Control
-        map.addControl(new bkoigl.NavigationControl());
-
-        // Add Map Scale Control
-        map.addControl(new bkoigl.ScaleControl());
+        // Register 'click' event
+        map.on("click", (e) => {
+          // Add Marker
+          const marker = new bkoigl.Marker({ draggable: true })
+            .setLngLat(e.lngLat)
+            .addTo(map);
+        });
       });
     </script>
   </body>

@@ -1,8 +1,3 @@
----
-sidebar_label: "Add Maps Control"
-sidebar_position: 4
----
-
 # Add Map Controls
 
 <iframe
