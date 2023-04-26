@@ -1,23 +1,19 @@
 ---
-sidebar_label: "Add Marker on Map Click"
-sidebar_position: 7
+sidebar_label: "Add Marker"
+sidebar_position: 5
 ---
 
-<iframe src="https://bkoi-gl-example-add-marker-on-click.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
+# Add marker
 
-##
+<iframe src="https://bkoi-gl-example-add-marker.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
-Register <span style={{color:"#e83e8c"}}>'click'</span> event and add <span style={{color:"#e83e8c"}}>marker</span>
+Add Marker on Map load
 
 ```js
 map.on("load", () => {
-  // Register 'click' event
-  map.on("click", (e) => {
-    // Add Marker
-    const marker = new bkoigl.Marker({ draggable: true })
-      .setLngLat(e.lngLat)
-      .addTo(map);
-  });
+  const marker = new bkoigl.Marker({ draggable: true })
+    .setLngLat([90.3938010872331, 23.821600277500405])
+    .addTo(map);
 });
 ```
 
@@ -46,7 +42,7 @@ map.on("load", () => {
         overflow: hidden;
       }
     </style>
-    <title>Add Marker on Map Click</title>
+    <title>Add Marker To Map</title>
   </head>
   <body>
     <div id="map"></div>
@@ -59,14 +55,11 @@ map.on("load", () => {
         zoom: 12,
       });
 
+      // Add Marker on Map Load
       map.on("load", () => {
-        // Register 'click' event
-        map.on("click", (e) => {
-          // Add Marker
-          const marker = new bkoigl.Marker({ draggable: true })
-            .setLngLat(e.lngLat)
-            .addTo(map);
-        });
+        const marker = new bkoigl.Marker({ draggable: true })
+          .setLngLat([90.3938010872331, 23.821600277500405])
+          .addTo(map);
       });
     </script>
   </body>

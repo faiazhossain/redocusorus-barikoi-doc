@@ -74,6 +74,18 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "pricing",
+        path: "pricing",
+        routeBasePath: "pricing",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -94,51 +106,16 @@ const config = {
             label: "Android Location Library",
             position: "left",
           },
+
+          {
+            to: "/pricing/maps-api", // ./docs-api/Intro.md
+            label: "Pricing",
+            position: "left",
+          },
         ],
       },
       footer: {
         style: "dark",
-        // links: [
-        //   {
-        //     title: "Docs",
-        //     items: [
-        //       {
-        //         label: "API",
-        //         to: "/api",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "Community",
-        //     items: [
-        //       {
-        //         label: "Stack Overflow",
-        //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
-        //       },
-        //       {
-        //         label: "Discord",
-        //         href: "https://discordapp.com/invite/docusaurus",
-        //       },
-        //       {
-        //         label: "Twitter",
-        //         href: "https://twitter.com/docusaurus",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "More",
-        //     items: [
-        //       {
-        //         label: "Blog",
-        //         to: "/blog",
-        //       },
-        //       {
-        //         label: "GitHub",
-        //         href: "https://github.com/facebook/docusaurus",
-        //       },
-        //     ],
-        //   },
-        // ],
         copyright: `Copyright © ${new Date().getFullYear()} Barikoi Technologies Limited`,
       },
       prism: {
@@ -147,5 +124,4 @@ const config = {
       },
     }),
 };
-
 module.exports = config;

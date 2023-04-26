@@ -1,17 +1,16 @@
 ---
-sidebar_label: "Display-basic-map"
-sidebar_position: 2
+sidebar_label: "Quickstart!"
+sidebar_position: 1
 ---
 
-# Display-basic-map
+# Quickstart
 
-# Overview
-
-Bkoi GL JS provides a JavaScript library to render interactive maps that display raster or vector tiles, markers, static and dynamic graphic elements for your mapping and visualization needs. It is part of the Bkoi GL ecosystem.
+# My Map
 
 <iframe src="https://bkoi-gl-example-display-map.surge.sh/" width="100%" height="280px" frameborder="0" allowfullscreen ></iframe>
+Get your own API key if you want to use Bkoi GL JS data in your project.<br/> <br/>
 
-1. Connect the CDN for Bkoi GL JS
+Include the JavaScript and CSS files in the head tag of your HTML file.
 
 ```html
 // For CSS
@@ -23,14 +22,7 @@ Bkoi GL JS provides a JavaScript library to render interactive maps that display
 <script src="https://cdn.barikoi.com/bkoi-gl-js/dist/bkoi-gl.js"></script>
 ```
 
-2. Initialize a map in an HTML element with Bkoi GL JS.  
-   Add `` tag into your page. The map will be loaded in the tag.
-
-```html
-<div id="map"></div>
-```
-
-3. The tag must have non-zero height.
+The tag must have non-zero height.
 
 ```css
 #map {
@@ -43,15 +35,18 @@ Bkoi GL JS provides a JavaScript library to render interactive maps that display
 }
 ```
 
-4. Finally, load the map
+Include the following code in the body tag of your HTML file.
 
-```js
-bkoigl.accessToken = ""; // required
-new bkoigl.Map({
-  container: "map",
-  center: [90.3938010872331, 23.821600277500405],
-  zoom: 12,
-});
+```html
+<div id="map"></div>
+<script>
+  bkoigl.accessToken = "<Barikoi API Key>"; // required
+  new bkoigl.Map({
+    container: "map",
+    center: [90.3938010872331, 23.821600277500405],
+    zoom: 12,
+  });
+</script>
 ```
 
 # Full Source Code:
