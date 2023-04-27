@@ -8,7 +8,7 @@ A single API request and a single API call are not always the same. A single API
 # API call count for each request
 
 <!-- details for reverse geocode api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Reverse Geocode API</summary>  
   <table>
   
@@ -55,7 +55,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for reverse geocode api server -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Reverse Geocode API(server)</summary>  
   <table>
   <tr>
@@ -101,7 +101,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for geocoding api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Geocoding API</summary>  
   <table>
   
@@ -148,7 +148,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Autocomplete api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Autocomplete API</summary>  
   <table>
   
@@ -195,7 +195,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Autocomplete api with city filter -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Autocomplete API with city filter</summary>  
   <table>
   
@@ -242,7 +242,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Postoffice autocomplete api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Post Office autocomplete API</summary>  
   <table>
   
@@ -289,7 +289,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Industrial autocomplete api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Industrial autocomplete API</summary>  
   <table>
   
@@ -336,7 +336,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Bangla autocomplete api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Bangla autocomplete API</summary>  
   <table>
   
@@ -383,7 +383,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Distance api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Distance API</summary>  
   <table>
   
@@ -430,7 +430,7 @@ A single API request and a single API call are not always the same. A single API
 </details>
 
 <!-- details for Rupantor geocoder api -->
-<details style={{backgroundColor:"white"}}>
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
   <summary>Rupantor geocoder API</summary>  
   <table>
   
