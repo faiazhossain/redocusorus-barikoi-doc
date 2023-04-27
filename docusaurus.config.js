@@ -108,7 +108,7 @@ const config = {
           },
 
           {
-            to: "/pricing/maps-api", // ./docs-api/Intro.md
+            to: "/pricing/pricing-call", // ./docs-api/Intro.md
             label: "Pricing",
             position: "left",
           },
