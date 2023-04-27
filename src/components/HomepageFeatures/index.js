@@ -16,33 +16,27 @@ export default function HomepageFeatures() {
             },
           }}
         >
-          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+          <Row justify='center' align='center' gutter={{ xs: 8, sm: 16, md: 24, lg: 34 }}>
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
-              span={12}
-              sm={{ span: 6 }}
             >
               <Link to="/api">
-                <Button value="large" type="primary">
+                <Button type="primary">
                   BARIKOI API
                 </Button>
               </Link>
             </Col>
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
-              span={12}
-              sm={{ span: 6 }}
             >
               <Link to="/docs/maps-api">
-                <Button value="large" type="primary">
+                <Button type="primary">
                   MAPS API
                 </Button>
               </Link>
             </Col>
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
-              span={12}
-              sm={{ span: 6 }}
             >
               <Link to="/blog/android-location-library">
                 <Button type="primary">ANDROID SDK</Button>
@@ -50,11 +44,9 @@ export default function HomepageFeatures() {
             </Col>
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
-              span={12}
-              sm={{ span: 6 }}
             >
               <Link to="/api">
-                <Button value="large" type="primary">
+                <Button type="primary">
                   PRICING
                 </Button>
               </Link>
