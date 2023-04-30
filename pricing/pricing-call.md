@@ -475,4 +475,51 @@ A single API request and a single API call are not always the same. A single API
 </table>
 
 </details>
+
+<!-- details for Rupantor address match api -->
+<details style={{backgroundColor:"#ECF2FF", color:"black"}}>
+  <summary>Rupantor address match API</summary>  
+  <table>
+  
+  <tr>
+  <td>
+
+| API          | Call count                                                 |
+| ------------ | ---------------------------------------------------------- |
+| Base Count   | <span style={{color:"#654E92",fontWeight:"bold"}}>2</span> |
+| District     | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| Post_code    | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| country      | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| sub_district | <span style={{color:"#9e9e9e"}}>0</span>                   |
+
+  </td>
+  <td></td>
+  <td>
+
+| API           | Call count                               |
+| ------------- | ---------------------------------------- |
+| address       | <span style={{color:"#9e9e9e"}}>0</span> |
+| Union         | <span style={{color:"#9e9e9e"}}>0</span> |
+| Pouroshova    | <span style={{color:"#9e9e9e"}}>0</span> |
+| location_type | <span style={{color:"#9e9e9e"}}>0</span> |
+| division      | <span style={{color:"#9e9e9e"}}>0</span> |
+
+  </td>
+
+  <td></td>
+  <td>
+
+| API         | Call count                                                 |
+| ----------- | ---------------------------------------------------------- |
+| area        | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| post_office | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| Thana       | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| bangla      | <span style={{color:"#9e9e9e"}}>0</span>                   |
+| match       | <span style={{color:"#654E92",fontWeight:"bold"}}>1</span> |
+
+  </td>
+  </tr> 
+</table>
+
+</details>
 <small style={{fontSize:"10px"}}>Note: Custom API 50 paisa per API call.</small>
