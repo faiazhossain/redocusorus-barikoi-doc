@@ -45,7 +45,7 @@ export default function HomepageFeatures() {
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
             >
-              <Link to="/api">
+              <Link to="/pricing/pricing-call">
                 <Button type="primary">PRICING</Button>
               </Link>
             </Col>
