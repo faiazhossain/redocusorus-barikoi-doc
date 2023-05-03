@@ -5,7 +5,7 @@ sidebar_position: 16
 
 # Context menu
 
-<iframe src="https://bkoi-gl-example-context-menu.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
+<iframe src="http://barikoi.com:8080/context-menu" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
 ##
 

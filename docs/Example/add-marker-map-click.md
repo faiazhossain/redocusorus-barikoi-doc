@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Add Marker on Map Click
 
-<iframe src="https://bkoi-gl-example-add-marker-on-click.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
+<iframe src="http://barikoi.com:8080/add-marker-on-click" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
 ##
 

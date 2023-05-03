@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # Fly to Location
 
-<iframe src="https://bkoi-gl-example-fly-to-location.surge.sh/" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
+<iframe src="http://barikoi.com:8080/fly-to-location" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
 ##
 
@@ -31,7 +31,7 @@ Add <span style={{color:"#e83e8c"}}>`flyTo`</span> method with custom location a
 ```js
 document.getElementById("fly-to").onclick = () => {
   map.flyTo({
-    center: [90.3938010872331, 23.821600277500405],
+    center: [90.364037, 23.823602],
     zoom: 16,
   });
 };
@@ -81,7 +81,7 @@ document.getElementById("fly-to").onclick = () => {
       bkoigl.accessToken = "<Barikoi API Key>"; // required
       const map = new bkoigl.Map({
         container: "map",
-        center: [90.3938010872331, 23.821600277500405],
+        center: [90.364037, 23.823602],
         zoom: 12,
       });
 
@@ -89,7 +89,7 @@ document.getElementById("fly-to").onclick = () => {
         // Add `flyTo` method with custom location and zoom level.
         document.getElementById("fly-to").onclick = () => {
           map.flyTo({
-            center: [90.3938010872331, 23.821600277500405],
+            center: [90.364037, 23.823602],
             zoom: 16,
           });
         };
