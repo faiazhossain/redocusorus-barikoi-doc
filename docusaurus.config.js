@@ -46,11 +46,12 @@ const config = {
           // Remove this to remove the "edit this page" links.
         },
 
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-        },
+        // blog: {
+        //   // showReadingTime: true,
+        //   // sidebarPath: require.resolve("./sidebars.js"),
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        // },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -82,10 +83,21 @@ const config = {
         id: "pricing",
         path: "pricing",
         routeBasePath: "pricing",
-        // sidebarPath: require.resolve("./sidebars.js"),
+        sidebarPath: require.resolve("./sidebars.js"),
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'android',
+        path: 'android',
+        routeBasePath: 'android',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }, 
+    ],
+
   ],
+  
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -103,11 +115,10 @@ const config = {
           { to: "/api", label: "API", position: "left" },
           { to: "/docs/maps-api", label: "Maps API", position: "left" },
           {
-            to: "/blog/android-location-library",
+            to: "/android/android-intro",
             label: "Android Location Library",
             position: "left",
           },
-
           {
             to: "/pricing/pricing-call", // ./docs-api/Intro.md
             label: "Pricing",
