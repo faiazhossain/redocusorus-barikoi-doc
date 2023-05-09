@@ -38,7 +38,7 @@ export default function HomepageFeatures() {
             <Col
               className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
             >
-              <Link to="/blog/android-location-library">
+              <Link to="/android/android-intro">
                 <Button type="primary">ANDROID SDK</Button>
               </Link>
             </Col>
@@ -47,6 +47,13 @@ export default function HomepageFeatures() {
             >
               <Link to="/pricing/pricing-call">
                 <Button type="primary">PRICING</Button>
+              </Link>
+            </Col>
+            <Col
+              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
+            >
+              <Link to="/flutter/barikoi-map-place-picker">
+                <Button type="primary">Flutter Library</Button>
               </Link>
             </Col>
           </Row>

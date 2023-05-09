@@ -95,6 +95,15 @@ const config = {
         sidebarPath: require.resolve('./sidebars.js'),
       }, 
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'flutter',
+        path: 'flutter',
+        routeBasePath: 'flutter',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }, 
+    ],
 
   ],
   
@@ -122,6 +131,11 @@ const config = {
           {
             to: "/pricing/pricing-call", // ./docs-api/Intro.md
             label: "Pricing",
+            position: "left",
+          },
+          {
+            to: "/flutter/barikoi-map-place-picker", // ./docs-api/Intro.md
+            label: "Flutter Library",
             position: "left",
           },
         ],
