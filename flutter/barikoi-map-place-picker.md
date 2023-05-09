@@ -5,8 +5,11 @@ sidebar_position: 1
 
 
 # Barikoi map place picker
+Barikoi Map Place picker is a flutter library that provides option to pick a place from map location or search using Barikoi Map and APIs.
 
-# Github
+# Installation
+
+<h3>Github</h3>
 If this Dart package is published to Github, please include the following in pubspec.yaml
 
 ```js
@@ -19,8 +22,9 @@ dependencies:
 
 instead of main you can specify the specific commit that works for you
 
-# Local
+<h3>Local</h3>
 To use the package in your local drive, please include the following in pubspec.yaml
+
 ```js
 dependencies:
   barikoi_maps_place_picker:
