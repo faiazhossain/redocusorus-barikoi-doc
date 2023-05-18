@@ -17,18 +17,10 @@ info:
     The currently listed Places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services:
 
      * [Reverse Geocode API](#tag/Reverse-Geocoding),
-     * [Reverse Geocoding (Server) API](),
-     * [Geocoding API](),
      * [Autocomplete API](#tag/Autocomplete),
      * [Nearby API](#tag/Nearby),
-     * [Distance API]()
      * [Rupantor Geocoder API](#tag/Rupantor).
      * [Routing API](#tag/Routing),
-     * [District API](),
-     * [Sub-District API](),
-     * [City API](),
-     * [Union API](),
-     * [Area API]()
 
     # Explore our APIs
 
