@@ -1,0 +1,5 @@
+description: dncc_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/dncc_success.yaml

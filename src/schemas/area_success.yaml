@@ -1,0 +1,8 @@
+type: object
+properties:
+  area:
+    type: string
+    default: dakkhinkhan
+  status:
+    type: number
+    default: 200

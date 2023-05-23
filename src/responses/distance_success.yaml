@@ -1,0 +1,5 @@
+description: distance_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/distance_success.yaml

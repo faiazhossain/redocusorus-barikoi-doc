@@ -3,4 +3,4 @@ in: query
 required: true
 schema:
   type: string
-  description: q
+  description: dhaka

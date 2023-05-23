@@ -3,4 +3,4 @@ in: path
 required: true
 schema:
   type: number
-  description: distance
+  description: distance in meters

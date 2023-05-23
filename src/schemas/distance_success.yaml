@@ -1,0 +1,8 @@
+type: object
+properties:
+  Distance:
+    type: string
+    default: 0.8081 KM
+  status:
+    type: integer
+    default: 200

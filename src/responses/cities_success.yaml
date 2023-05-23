@@ -1,0 +1,5 @@
+description: cities_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/cities_success.yaml

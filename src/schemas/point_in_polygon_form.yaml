@@ -1,0 +1,5 @@
+type: object
+properties:
+  point:
+    type: string
+    description: 90.41697542000593,23.780273491928714

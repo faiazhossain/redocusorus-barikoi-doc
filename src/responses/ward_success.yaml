@@ -1,0 +1,5 @@
+description: ward_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ward_success.yaml

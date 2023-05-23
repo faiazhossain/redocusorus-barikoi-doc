@@ -1,6 +1,6 @@
-name: bangla
+name: thana
 in: query
 required: false
 schema:
   type: boolean
-  description: bangla
+  description: thana

@@ -1,0 +1,5 @@
+description: districts_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/districts_success.yaml

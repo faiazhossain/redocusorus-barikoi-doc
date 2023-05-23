@@ -1,5 +1,0 @@
-description: location_optimized_success
-content:
-  application/json:
-    schema:
-      $ref: ../schemas/location_optimized_success.yaml

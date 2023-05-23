@@ -2,26 +2,15 @@ type: object
 properties:
   q:
     type: string
-    example: yes
+    description: হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর
   q2:
     type: string
-    example: yes
+    description: house 18, road 5, block G, section 2, mirpur
   match:
-    type: string
-    example: yes
-  thana:
-    type: string
-    example: yes
-  district:
-    type: string
-    example: yes
-  bangla:
-    type: string
-    example: yes
-  zone:
     type: boolean
-    example: true
-required: 
+    description: yes
+
+required:
   - q
   - q2
   - match

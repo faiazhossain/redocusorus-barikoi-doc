@@ -1,0 +1,5 @@
+description: subdistricts_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/subdistricts_success.yaml

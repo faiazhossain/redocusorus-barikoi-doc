@@ -1,0 +1,68 @@
+type: object
+properties:
+  place:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 534001
+      distance_within_meters:
+        type: number
+        example: 3.9083
+      address:
+        type: string
+        example: House 20, Avenue 3, Lane 25, Block D, Section 11
+      area:
+        type: string
+        example: Mirpur
+      city:
+        type: string
+        example: Dhaka
+      postCode:
+        type: integer
+        example: 1216
+      country:
+        type: string
+        example: Bangladesh        
+      division:
+        type: string
+        example: Dhaka        
+      sub_district:
+        type: string
+        example: Pallabi        
+      district:
+        type: string
+        example: Dhaka
+      pauroshova:
+        type: string
+        example:
+      union:
+        type: string
+        example:
+      location_type:
+        type: string
+        example: Urban
+      address_components:
+        type: object
+        properties:
+          place_name:
+            type: string
+            example:
+          house:
+            type: string
+            example: House 20
+          road:
+            type: string
+            example: Avenue 3
+      area_components:
+        type: object
+        properties:
+          area:
+            type: string
+            example: Mirpur
+          sub_area:
+            type: string
+            example: Section 11
+  status:
+    type: integer
+    default: 200

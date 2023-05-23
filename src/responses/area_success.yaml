@@ -1,0 +1,5 @@
+description: area_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/area_success.yaml

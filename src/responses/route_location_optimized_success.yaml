@@ -1,0 +1,5 @@
+description: route_location_optimized_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/route_location_optimized_success.yaml

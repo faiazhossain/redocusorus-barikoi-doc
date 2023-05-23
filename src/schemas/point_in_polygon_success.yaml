@@ -1,0 +1,10 @@
+type: object
+properties:
+  message:
+    type: string
+    default: Point not inside polygon
+  status:
+    type: number
+    default: 200
+  data:
+    type: null

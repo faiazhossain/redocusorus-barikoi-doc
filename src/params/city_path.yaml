@@ -1,0 +1,6 @@
+name: city_path
+in: path
+required: true
+schema:
+  type: boolean
+  description: city

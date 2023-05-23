@@ -1,0 +1,8 @@
+type: object
+properties:
+  message:
+    type: string
+    default: "dncc"
+  status:
+    type: integer
+    default: 200

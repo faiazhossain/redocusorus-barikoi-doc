@@ -14,7 +14,7 @@ const config = {
   favicon: "img/barikoi-logo.png",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://docs.barikoimaps.dev/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -63,7 +63,7 @@ const config = {
         // Plugin Options for loading OpenAPI files
         specs: [
           {
-            spec: "./src/barikoi_api.yaml",
+            spec: "./src/business_api.yaml",
             route: "/api/",
           },
         ],

@@ -1,0 +1,5 @@
+description: wardzone_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/wardzone_success.yaml

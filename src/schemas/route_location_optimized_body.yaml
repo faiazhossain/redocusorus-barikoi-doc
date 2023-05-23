@@ -2,7 +2,7 @@ type: object
 properties:
   api_key:
     type: string
-    example: <BARIKOI_API_KEY>
+    example: api_key
   locations:
     type: array
     items:
@@ -126,9 +126,6 @@ properties:
                   example: Dhanmondi, Road 8/a
         required:
           - point
-required: 
+required:
   - api_key
   - locations
-
-
-  

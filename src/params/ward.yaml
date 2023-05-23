@@ -1,0 +1,6 @@
+name: ward_number
+in: query
+required: true
+schema:
+  type: number
+  description: ward_number

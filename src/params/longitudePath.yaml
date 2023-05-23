@@ -1,0 +1,6 @@
+name: longitude
+in: path
+required: true
+schema:
+  type: number
+  description: longitude

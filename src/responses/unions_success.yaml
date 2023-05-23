@@ -1,0 +1,5 @@
+description: unions_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/unions_success.yaml

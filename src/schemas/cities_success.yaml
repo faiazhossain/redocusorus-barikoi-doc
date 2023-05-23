@@ -1,0 +1,66 @@
+type: object
+properties:
+  places:
+    type: array
+    items:
+      - type: object
+        properties:
+          name:
+            type: string
+            default: Dhaka
+          areas:
+            type: array
+            items:
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Moghbazar
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Dhaka Cantonment
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Gendaria
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Sher E Bangla Nagar
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Tejgaon
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Banasree
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Dakkhinkhan
+              - type: object
+                properties:
+                  name:
+                    type: string
+                    default: Mohakhali
+      - type: object
+        properties:
+          name:
+            type: string
+            default: Joldhaka
+          areas:
+            type: array
+            items:
+              - type: object
+
+  status:
+    type: number
+    default: 200

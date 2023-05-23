@@ -5,11 +5,11 @@ properties:
     items:
       type: number
       format: double
-    example: [90.36288202934098, 23.804755823392888]
+    example: [90.36288583910802, 23.80475086627028]
   distance:
     type: number
     format: double
-    example: 1.2604423448728288
+    example: 0.5866113852736488
   type:
     type: string
     example: Point

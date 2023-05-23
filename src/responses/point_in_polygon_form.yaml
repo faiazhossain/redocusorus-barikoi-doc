@@ -1,0 +1,5 @@
+description: point_in_polygon_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/point_in_polygon_form.yaml

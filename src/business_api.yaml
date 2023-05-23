@@ -1,0 +1,2257 @@
+openapi: 3.0.0
+info:
+  title: Barikoi Business API
+  license:
+    name: Barikoi
+    url: "https://www.barikoi.com/"
+  description: >
+
+    # Introduction
+
+    Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API Helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.
+
+    # Overview
+
+    The currently listed Places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services:
+
+
+    ## Version 1
+     * [Reverse Geocode](#tag/v1.0/operation/revgeo_v1)
+     * [Reverse Geocoding (Server)](#tag/v1.0/operation/revgeo_server_v1)
+     * [Autocomplete](#tag/v1.0/operation/autocomplete_v1)
+     * [Distance](#tag/v1.0/operation/distance_v1)
+     * [Rupantor Geocoder](#tag/v1.0/operation/rupantor_geocoder_v1)
+     * [Rupantor Address Match](#tag/v1.0/operation/rupantor_address_match_v1)
+     * [Routing](#tag/v1.0/operation/routing_v1)
+     * [Snap To Road](#tag/v1.0/operation/snap_to_road_v1)
+     * [Route Match](#tag/v1.0/operation/route_match_v1)
+     * [Districts](#tag/v1.0/operation/districts_v1)
+     * [Sub Districts](#tag/v1.0/operation/sub_districts_v1)
+     * [Cities](#tag/v1.0/operation/cities_v1)
+     * [Unions](#tag/v1.0/operation/unions_v1)
+     * [Ward by Geolocation](#tag/v1.0/operation/ward_v1)
+     * [Zone by Geolocation](#tag/v1.0/operation/zone_v1)
+     * [Ward Zone by Geolocation](#tag/v1.0/operation/ward_zone_v1)
+     * [City Corporation by Geolocation](#tag/v1.0/operation/dncc_v1)
+
+     ## Version 2
+     * [Reverse Geocoding](#tag/v2.0/operation/revgeo_v2)
+     * [Autocomplete](#tag/v2.0/operation/autocomplete_v2)
+     * [Rupantor Geocoder](#tag/v2.0/operation/rupantor_geocoder_v2)
+     * [Rupantor Address Match](#tag/v2.0/operation/rupantor_address_match_v2)
+     * [Route Location Optimized](#tag/v2.0/operation/route_location_optimized)
+     * [Route Match](#tag/v2.0/operation/route_match_v2)
+     * [Area](#tag/v2.0/operation/area_v2)
+     * [Ward Geometry](#tag/v2.0/operation/ward_v2)
+     * [Nearby API with Query Param](#tag/v2.0/operation/nearby_query_param)
+     * [Point in Polygon](#tag/v2.0/operation/point-in-polygon_v2)
+
+
+    # Explore our APIs
+
+    ## Get started
+
+    [Create an API key](https://developer.barikoi.com/register)
+
+
+    Each API part has its own documentation. Jump to the desired API part and
+    learn about the API through the given examples and tutorials.
+
+
+    In addition, for each API there are specific sample requests that you can
+    send via Insomnia or Postman to see what the requests and responses look
+    like.
+
+
+    ## Contact Us
+
+    If you have problems or questions, please read the following information:
+
+  # version: 2.0.0
+  termsOfService: https://www.barikoi.com/data-privacy
+  contact:
+    name: API Support
+    email: hello@barikoi.com
+    url: https://www.barikoi.com/
+  x-logo:
+    url: barikoi.png
+    altText: Barikoi
+
+tags:
+  - name: v1.0
+    description: Version 1.0 Endpoints
+
+  - name: v2.0
+    description: Version 2.0 Endpoints
+
+servers:
+  - url: https://barikoi.xyz
+    description: Barikoi API Server
+
+security:
+  - api_key: []
+paths:
+  # Version 1.0
+
+  # Reverse Geocoding API v1
+  /v1/api/search/reverse/{api_key}/geocode:
+    get:
+      operationId: revgeo_v1
+      tags:
+        - v1.0
+      summary: Reverse Geocoding
+      description: This API initially returns id, address, area, city, distance_within_meters without any additional call
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+        - $ref: "#/components/parameters/districtParam"
+        - $ref: "#/components/parameters/post_codeParam"
+        - $ref: "#/components/parameters/countryParam"
+        - $ref: "#/components/parameters/sub_districtParam"
+        - $ref: "#/components/parameters/unionParam"
+        - $ref: "#/components/parameters/pauroshovaParam"
+        - $ref: "#/components/parameters/location_typeParam"
+        - $ref: "#/components/parameters/divisionParam"
+        - $ref: "#/components/parameters/addressParam"
+        - $ref: "#/components/parameters/areaParam"
+        - $ref: "#/components/parameters/banglaParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/reverse/API_KEY/geocode?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rev_geo_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Reverse Geocoding API Server v1
+  /v1/api/search/reverse/geocode/server/{api_key}/place:
+    get:
+      operationId: revgeo_server_v1
+      tags:
+        - v1.0
+      summary: Reverse Geocoding Server
+      description: This API initially returns id, address, area, city, distance_within_meters without any additional call
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+        - $ref: "#/components/parameters/districtParam"
+        - $ref: "#/components/parameters/post_codeParam"
+        - $ref: "#/components/parameters/countryParam"
+        - $ref: "#/components/parameters/sub_districtParam"
+        - $ref: "#/components/parameters/unionParam"
+        - $ref: "#/components/parameters/pauroshovaParam"
+        - $ref: "#/components/parameters/location_typeParam"
+        - $ref: "#/components/parameters/divisionParam"
+        - $ref: "#/components/parameters/addressParam"
+        - $ref: "#/components/parameters/areaParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/reverse/geocode/server/API_KEY/place?longitude=90.36744611263278&latitude=23.81970957278533&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rev_geo_server_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # AutoComplete v1
+  /v1/api/search/autocomplete/{api_key}/place:
+    get:
+      operationId: autocomplete_v1
+      tags:
+        - v1.0
+      summary: AutoComplete
+      description: Barikoi Autocomplete return's a place's id, longitude, latitude, address, city, area, postCode, pType & uCode
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/qParam"
+        - $ref: "#/components/parameters/post_officeParam"
+        - $ref: "#/components/parameters/industrialParam"
+        - $ref: "#/components/parameters/banglaParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=nabisco&city=dhaka&post_office=true&industrial=true&bangla=true'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=nabisco&city=dhaka&post_office=true&industrial=true&bangla=true"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/autocomplete/API_KEY/place?q=nabisco&city=dhaka&post_office=true&industrial=true&bangla=true',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/autocomplete_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Distance
+  /v1/api/distance/{api_key}/{longitude}/{latitude}:
+    get:
+      operationId: distance_v1
+      tags:
+        - v1.0
+      summary: Distance
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudePathParam"
+        - $ref: "#/components/parameters/latitudePathParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/distance/API_KEY/90.357238,23.806672/90.357252,23.811626'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/distance/API_KEY/90.357238,23.806672/90.357252,23.811626"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/distance/API_KEY/90.357238,23.806672/90.357252,23.811626',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/distance_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Rupantor Geocoder v1
+  /v1/api/search/{api_key}/rupantor/geocode?q=:
+    post:
+      operationId: rupantor_geocoder_v1
+      tags:
+        - v1.0
+      summary: Rupantor Geocoder
+      description: Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete or not. Rupantor Geocoder only supports FormData. So use FormData object to send your data. Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode' \
+            --form 'q="matikata rd basa 572/k barikoi"' \
+            --form 'thana="yes"' \
+            --form 'district="yes"' \
+            --form 'bangla="yes"'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode"
+            payload={'q': 'matikata rd basa 572/k barikoi',
+            'thana': 'yes',
+            'district': 'yes',
+            'bangla': 'yes'}
+            files=[]
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('q', 'matikata rd basa 572/k barikoi');
+            data.append('thana', 'yes');
+            data.append('district', 'yes');
+            data.append('bangla', 'yes');
+            var config = {
+              method: 'post',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/rupantor_geocoder_form_v1"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rupantor_geocoder_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Rupantor Address Match v1
+  /v1/api/search/{api_key}/rupantor/geocode:
+    post:
+      operationId: rupantor_address_match_v1
+      tags:
+        - v1.0
+      summary: Rupantor Address Match
+      description: Rupantor Address Matcher API matches two different given address and returns match percantage and match status.
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode' \
+            --form 'q="হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর"' \
+            --form 'q2="house 18, road 5, block G, section 2, mirpur"' \
+            --form 'match="yes"'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode"
+            payload={'q': 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর',
+            'q2': 'house 18, road 5, block G, section 2, mirpur',
+            'match': 'yes'}
+            files=[]
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('q', 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর');
+            data.append('q2', 'house 18, road 5, block G, section 2, mirpur');
+            data.append('match', 'yes');
+            var config = {
+              method: 'post',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/rupantor_address_match_form"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rupantor_address_match_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Routing v1
+  /v1/api/route/{api_key}/{coordinates}:
+    get:
+      operationId: routing_v1
+      tags:
+        - v1.0
+      summary: Routing
+      description: This api provides routing details for two location points.
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/coordinatesParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/routing_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Snap to Road v1
+  /v1/api/routing/{api_key}/nearest?point=:
+    get:
+      operationId: snap_to_road_v1
+      tags:
+        - v1.0
+      summary: Snap to Road
+      description: " "
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/pointParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/routing/API_KEY/nearest?point=23.80474653651567,90.36288913339376"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/routing/API_KEY/nearest?point=23.80474653651567,90.36288913339376',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/snap_to_road_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Route Match v1
+  /v1/api/routing/{api_key}/matching?points=:
+    get:
+      operationId: route_match_v1
+      tags:
+        - v1.0
+      summary: Route match
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/pointsParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658',
+              headers: { }
+            };  
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/route_match_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Districts v1
+  /v1/api/{api_key}/districts?q=:
+    get:
+      operationId: districts_v1
+      tags:
+        - v1.0
+      summary: Districts
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/qParamDistricts"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/API_KEY/districts?q=Dhaka'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/API_KEY/districts?q=Dhaka"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/API_KEY/districts?q=Dhaka',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/districts_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Subdistricts v1
+  /v1/api/{api_key}/sub_districts?q=:
+    get:
+      operationId: sub_districts_v1
+      tags:
+        - v1.0
+      summary: Subdistricts
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/qParamSubdistricts"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/API_KEY/sub_districts?q=Khilgaon'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/API_KEY/sub_districts?q=Khilgaon"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/API_KEY/sub_districts?q=Khilgaon',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/subdistricts_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Cities v1
+  /v1/api/{api_key}/cities?q=:
+    get:
+      operationId: cities_v1
+      tags:
+        - v1.0
+      summary: Cities
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/qParamCities"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/API_KEY/cities?q=Dhaka'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/API_KEY/cities?q=Dhaka"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/API_KEY/cities?q=Dhaka',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/cities_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Unions v1
+  /v1/api/{api_key}/unions?q=:
+    get:
+      operationId: unions_v1
+      tags:
+        - v1.0
+      summary: Unions
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/qParamUnions"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/API_KEY/unions?q=Abaipur'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/API_KEY/unions?q=Abaipur"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/API_KEY/unions?q=Abaipur',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/unions_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Ward by Geolocation API v1
+  /v1/api/search/ward/{api_key}/{longitude}/{latitude}:
+    get:
+      operationId: ward_v1
+      tags:
+        - v1.0
+      summary: Ward by Geolocation
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudePathParam"
+        - $ref: "#/components/parameters/latitudePathParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/ward/API_KEY/90.357238/23.806672'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/ward/API_KEY/90.357238/23.806672"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/ward/API_KEY/90.357238/23.806672',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/ward_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Zone by geolocation API v1
+  /v1/api/search/zone/{api_key}/{longitude}/{latitude}:
+    get:
+      operationId: zone_v1
+      tags:
+        - v1.0
+      summary: Zone by Geolocation
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudePathParam"
+        - $ref: "#/components/parameters/latitudePathParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/zone/API_KEY/90.357238/23.806672'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/zone/API_KEY/90.357238/23.806672"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/zone/API_KEY/90.357238/23.806672',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/zone_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Ward Zone by Geolocation API v1
+  /v1/api/search/ward/zone/{api_key}/{longitude}/{latitude}:
+    get:
+      operationId: ward_zone_v1
+      tags:
+        - v1.0
+      summary: Ward Zone by Geolocation
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudePathParam"
+        - $ref: "#/components/parameters/latitudePathParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/ward/zone/API_KEY/90.357238/23.806672'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/ward/zone/API_KEY/90.357238/23.806672"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/ward/zone/API_KEY/90.357238/23.806672',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/wardzone_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # City Corporation by Geolocation API v1
+  /v1/api/search/dncc/{api_key}/{longitude}/{latitude}:
+    get:
+      operationId: dncc_v1
+      tags:
+        - v1.0
+      summary: City Corporation by Geolocation
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/longitudePathParam"
+        - $ref: "#/components/parameters/latitudePathParam"
+
+      x-code-samples:
+        - lang: Curl;
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/dncc/API_KEY/90.357238/23.806672'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/dncc/API_KEY/90.357238/23.806672"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/dncc/API_KEY/90.357238/23.806672',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/dncc_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Version 2
+  # Reverse Geocoding API v2
+  /v2/api/search/reverse/geocode:
+    get:
+      operationId: revgeo_v2
+      tags:
+        - v2.0
+      summary: Reverse Geocoding
+      description: This API initially returns id, address, area, city, distance_within_meters without any additional call
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+        - $ref: "#/components/parameters/districtParam"
+        - $ref: "#/components/parameters/post_codeParam"
+        - $ref: "#/components/parameters/countryParam"
+        - $ref: "#/components/parameters/sub_districtParam"
+        - $ref: "#/components/parameters/unionParam"
+        - $ref: "#/components/parameters/pauroshovaParam"
+        - $ref: "#/components/parameters/location_typeParam"
+        - $ref: "#/components/parameters/divisionParam"
+        - $ref: "#/components/parameters/addressParam"
+        - $ref: "#/components/parameters/areaParam"
+        - $ref: "#/components/parameters/banglaParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/reverse/geocode?api_key=API_KEY&longitude=90.35722628659195&latitude=23.806703092211507&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/reverse/geocode?api_key=API_KEY&longitude=90.35722628659195&latitude=23.806703092211507&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/reverse/geocode?api_key=API_KEY&longitude=90.35722628659195&latitude=23.806703092211507&district=true&post_code=true&country=true&sub_district=true&union=true&pauroshova=true&location_type=true&division=true&address=true&area=true&bangla=true',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rev_geo_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Autocomplete API v2
+  /v2/api/search/autocomplete/place:
+    get:
+      operationId: autocomplete_v2
+      tags:
+        - v2.0
+      summary: Autocomplete
+      description: Barikoi Autocomplete return's a place's id, longitude, latitude, address, city, area, postCode, pType & uCode
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/qParam"
+        - $ref: "#/components/parameters/cityParam"
+        - $ref: "#/components/parameters/banglaParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/autocomplete/place?api_key=API_KEY&q=jessore&city=dhaka&bangla=true'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/autocomplete/place?api_key=API_KEY&q=jessore&city=dhaka&bangla=true"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/autocomplete/place?api_key=API_KEY&q=jessore&city=dhaka&bangla=true',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/autocomplete_bangla_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Rupantor Geocoder v2
+  /v2/api/search/rupantor/geocode:
+    post:
+      operationId: rupantor_geocoder_v2
+      tags:
+        - v2.0
+      summary: Rupantor Geocoder
+      description: Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete or not. Rupantor Geocoder only supports FormData. So use FormData object to send your data. Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY' \
+            --form 'q="shawrapara"' \
+            --form 'thana="yes"' \
+            --form 'district="yes"' \
+            --form 'bangla="yes"'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY"
+            payload={'q': 'shawrapara',
+            'thana': 'yes',
+            'district': 'yes',
+            'bangla': 'yes'}
+            files=[]
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('q', 'shawrapara');
+            data.append('thana', 'yes');
+            data.append('district', 'yes');
+            data.append('bangla', 'yes');
+            var config = {
+              method: 'post',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/rupantor_geocoder_form_v2"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rupantor_geocoder_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Rupantor Address Match v2
+  /v2/api/search/rupantor/geocode?api_key=:
+    post:
+      operationId: rupantor_address_match_v2
+      tags:
+        - v2.0
+      summary: Rupantor Address Match
+      description: Rupantor Address Matcher API matches two different given address and returns match percentage and match status.
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode' \
+            --form 'q="হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর"' \
+            --form 'q2="house 18, road 5, block G, section 2, mirpur"' \
+            --form 'match="yes"'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode"
+            payload={'q': 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর',
+            'q2': 'house 18, road 5, block G, section 2, mirpur',
+            'match': 'yes'}
+            files=[]
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('q', 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর');
+            data.append('q2', 'house 18, road 5, block G, section 2, mirpur');
+            data.append('match', 'yes');
+            var config = {
+              method: 'post',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/rupantor_address_match_form"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/rupantor_address_match_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Route v2
+  /v2/api/route/{coordinates}:
+    get:
+      operationId: route
+      tags:
+        - v2.0
+      summary: Route
+      description: " "
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/coordinatesParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var config = {
+              method: 'get',
+              maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY',
+              headers: { }
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/routing_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Route Optimization
+  /v2/api/route/optimized:
+    post:
+      operationId: route_optimization
+      tags:
+        - v2.0
+      summary: Route Optimization
+      description: |+
+        This api provides routing details from source to destination points. Additional waypoints can also be included in order to get more precise routing experience. Maximum 50 waypoints can be included as additional points. Content-Types:application/json should be attached to the request header in order to match the correct request format.
+
+        Note: Waypoints will be sorted based on given id in ascending order.
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/route_optimization_body"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/route/optimized' \
+            --data '{
+                "api_key": "API_KEY",
+                "source": "23.746086,90.37368",
+                "destination": "23.746214,90.371654",
+                "profile": "car",
+                "geo_points": [
+                    {
+                        "id": 1,
+                        "point": "23.746086,90.37368"
+                    },
+                    {
+                        "id": 2,
+                        "point": "23.74577,90.373389"
+                    },
+                    {
+                        "id": 3,
+                        "point": "23.74442,90.372909"
+                    },
+                    {
+                        "id": 4,
+                        "point": "23.743961,90.37214"
+                    }
+                ]
+            }'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/route/optimized"
+            payload = "{\n    \"api_key\": \"API_KEY\",\n    \"source\": \"23.746086,90.37368\",\n    \"destination\": \"23.746214,90.371654\",\n    \"profile\": \"car\",\n    \"geo_points\": [\n        {\n            \"id\": 1,\n            \"point\": \"23.746086,90.37368\"\n        },\n        {\n            \"id\": 2,\n            \"point\": \"23.74577,90.373389\"\n        },\n        {\n            \"id\": 3,\n            \"point\": \"23.74442,90.372909\"\n        },\n        {\n            \"id\": 4,\n            \"point\": \"23.743961,90.37214\"\n        }\n    ]\n}"
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var data = '{\n    "api_key": "API_KEY",\n    "source": "23.746086,90.37368",\n    "destination": "23.746214,90.371654",\n    "profile": "car",\n    "geo_points": [\n        {\n            "id": 1,\n            "point": "23.746086,90.37368"\n        },\n        {\n            "id": 2,\n            "point": "23.74577,90.373389"\n        },\n        {\n            "id": 3,\n            "point": "23.74442,90.372909"\n        },\n        {\n            "id": 4,\n            "point": "23.743961,90.37214"\n        }\n    ]\n}';
+            var config = {
+              method: 'post',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/route/optimized',
+              headers: { },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/route_optimization_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Route Location Optimized v2
+  /v2/api/route/sorted:
+    post:
+      operationId: route_location_optimized
+      tags:
+        - v2.0
+      summary: Route Location Optimized
+      description: Location sorting api takes a set of locations with additional payload attached with each location considering the first one as the source and the last one as the destination. It returns with the sorted location set that was provided considering the distance between the locations in Kilometers from source to destination. Maximum 50 locations can be attached in a row. Content-Types:application/json should be attached to the request header in order to match the correct request format.
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/route_location_optimized_body"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/route/sorted' \
+            --data '{
+                "api_key" : "API_KEY",
+                "locations": [
+                    {"point": {"lat": 24.439648,"lon" : 90.731277}, "additional_payload" : [{"address" : "Kishoreganj Thana"}]},
+                    {"point": {"lat": 23.74608583,"lon" : 90.37368}, "additional_payload" : [{"address" : "House 36, Road 9/A"}]},
+                    {"point": {"lat": 24.440899,"lon" : 90.771103}, "additional_payload" : [{"address" : "Monju Villa, House 1244, Hossainpur Road, Nogua"}]},
+                    {"point": {"lat": 23.74577034,"lon" : 90.37338898}, "additional_payload" : [{"address" : "House 38, Road 9/A"}]},
+                    {"point": {"lat": 23.74441997,"lon" : 90.37290861}, "additional_payload" : [{"address" : "Dhanmondi, Road 8/a"}]}
+                ]
+            }'
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/route/sorted"
+            payload = "{\n    \"api_key\" : \"API_KEY\",\n    \"locations\": [\n        {\"point\": {\"lat\": 24.439648,\"lon\" : 90.731277}, \"additional_payload\" : [{\"address\" : \"Kishoreganj Thana\"}]},\n        {\"point\": {\"lat\": 23.74608583,\"lon\" : 90.37368}, \"additional_payload\" : [{\"address\" : \"House 36, Road 9/A\"}]},\n        {\"point\": {\"lat\": 24.440899,\"lon\" : 90.771103}, \"additional_payload\" : [{\"address\" : \"Monju Villa, House 1244, Hossainpur Road, Nogua\"}]},\n        {\"point\": {\"lat\": 23.74577034,\"lon\" : 90.37338898}, \"additional_payload\" : [{\"address\" : \"House 38, Road 9/A\"}]},\n        {\"point\": {\"lat\": 23.74441997,\"lon\" : 90.37290861}, \"additional_payload\" : [{\"address\" : \"Dhanmondi, Road 8/a\"}]}\n    ]\n}"
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var data = '{\n    "api_key" : "API_KEY",\n    "locations": [\n        {"point": {"lat": 24.439648,"lon" : 90.731277}, "additional_payload" : [{"address" : "Kishoreganj Thana"}]},\n        {"point": {"lat": 23.74608583,"lon" : 90.37368}, "additional_payload" : [{"address" : "House 36, Road 9/A"}]},\n        {"point": {"lat": 24.440899,"lon" : 90.771103}, "additional_payload" : [{"address" : "Monju Villa, House 1244, Hossainpur Road, Nogua"}]},\n        {"point": {"lat": 23.74577034,"lon" : 90.37338898}, "additional_payload" : [{"address" : "House 38, Road 9/A"}]},\n        {"point": {"lat": 23.74441997,"lon" : 90.37290861}, "additional_payload" : [{"address" : "Dhanmondi, Road 8/a"}]}\n    ]\n}';
+            var config = {
+              method: 'post',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/route/sorted',
+              headers: { },
+              data : data
+            };
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/route_location_optimized_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Route Match v2
+  /v2/api/routing/matching:
+    get:
+      operationId: route_match_v2
+      tags:
+        - v2.0
+      summary: Route Match
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/pointsParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request GET 'https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658&api_key=<BARIKOI_API_KEY>'
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658&api_key=API_KEY"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)            
+            print(response.text)
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658&api_key=API_KEY',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/route_match_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Nearby API v1
+  # /search/nearby/v1/{distance}/{limit}:
+  #   get:
+  #     operationId: nearby_v1
+  #     tags:
+  #       - v1.0
+  #     summary: Nearby API
+  #     description: All Nearby API counts according to the limit parameter or number of places returned in response data.
+
+  #     parameters:
+  #       - $ref: "#/components/parameters/api_keyParam"
+  #       - $ref: "#/components/parameters/longitudeParam"
+  #       - $ref: "#/components/parameters/latitudeParam"
+  #       - $ref: "#/components/parameters/distanceParam"
+  #       - $ref: "#/components/parameters/limitParam"
+
+  #     x-code-samples:
+  #       - lang: Curl
+  #         source: |
+  #           curl --location --request GET 'https://barikoi.xyz/v2/api/search/nearby/0.5/10?api_key=<BARIKOI_API_KEY>&longitude=90.38305163&latitude=23.87188719'
+
+  #     responses:
+  #       "200":
+  #         $ref: "#/components/responses/nearby_success"
+  #       "400":
+  #         $ref: "#/components/responses/missing_parameter"
+  #       "401":
+  #         $ref: "#/components/responses/no_registered_key"
+  #       "402":
+  #         $ref: "#/components/responses/payment_exception"
+  #       "429":
+  #         $ref: "#/components/responses/api_limit_exceeded"
+
+  # Nearby API v2
+  # /search/nearby/v2/{distance}/{limit}:
+  #   get:
+  #     operationId: nearby_v2
+  #     tags:
+  #       - v2.0
+  #     summary: Nearby API
+  #     description: All Nearby API counts according to the limit parameter or number of places returned in response data.
+
+  #     parameters:
+  #       - $ref: "#/components/parameters/api_keyParam"
+  #       - $ref: "#/components/parameters/longitudeParam"
+  #       - $ref: "#/components/parameters/latitudeParam"
+  #       - $ref: "#/components/parameters/distanceParam"
+  #       - $ref: "#/components/parameters/limitParam"
+
+  #     x-code-samples:
+  #       - lang: Curl
+  #         source: |
+  #           curl --location --request GET 'https://barikoi.xyz/v2/api/search/nearby/0.5/10?api_key=<BARIKOI_API_KEY>&longitude=90.38305163&latitude=23.87188719'
+
+  #     responses:
+  #       "200":
+  #         $ref: "#/components/responses/nearby_success"
+  #       "400":
+  #         $ref: "#/components/responses/missing_parameter"
+  #       "401":
+  #         $ref: "#/components/responses/no_registered_key"
+  #       "402":
+  #         $ref: "#/components/responses/payment_exception"
+  #       "429":
+  #         $ref: "#/components/responses/api_limit_exceeded"
+
+  # Nearby API with Category v2
+  # /search/nearby/category/{distance}/{limit}:
+  #   get:
+  #     operationId: nearby_category
+  #     tags:
+  #       - v2.0
+  #     summary: Nearby API with Category
+  #     description: All Nearby API counts according to the limit parameter or number of places returned in response data.
+
+  #     parameters:
+  #       - $ref: "#/components/parameters/api_keyParam"
+  #       - $ref: "#/components/parameters/longitudeParam"
+  #       - $ref: "#/components/parameters/latitudeParam"
+  #       - $ref: "#/components/parameters/distanceParam"
+  #       - $ref: "#/components/parameters/limitParam"
+  #       - $ref: "#/components/parameters/ptypeParam"
+
+  #     x-code-samples:
+  #       - lang: Curl
+  #         source: |
+  #           curl --location --request GET 'https://barikoi.xyz/v2/api/search/nearby/category/1/10?api_key=<BARIKOI_API_KEY>&longitude=90.36668110638857&latitude=23.83723803415923&ptype=School'
+
+  #     responses:
+  #       "200":
+  #         $ref: "#/components/responses/nearby_success"
+  #       "400":
+  #         $ref: "#/components/responses/missing_parameter"
+  #       "401":
+  #         $ref: "#/components/responses/no_registered_key"
+  #       "402":
+  #         $ref: "#/components/responses/payment_exception"
+  #       "429":
+  #         $ref: "#/components/responses/api_limit_exceeded"
+
+  # # Nearby API with Multiple Types v2
+  # # /search/nearby/multi/type/{distance}/{limit}:
+  #   get:
+  #     operationId: nearby_multiple_types
+  #     tags:
+  #       - v2.0
+  #     summary: Nearby API with Multiple Types
+  #     description: All Nearby API counts according to the limit parameter or number of places returned in response data.
+
+  #     parameters:
+  #       - $ref: "#/components/parameters/api_keyParam"
+  #       - $ref: "#/components/parameters/longitudeParam"
+  #       - $ref: "#/components/parameters/latitudeParam"
+  #       - $ref: "#/components/parameters/distanceParam"
+  #       - $ref: "#/components/parameters/limitParam"
+  #       - $ref: "#/components/parameters/qParam"
+
+  #     x-code-samples:
+  #       - lang: Curl
+  #         source: |
+  #           curl --location --request GET 'https://barikoi.xyz/v2/api/search/nearby/multi/type/5/5?api_key=<BARIKOI_API_KEY>&q=School,ATM&longitude=90.36668110638857&latitude=23.83723803415923'
+
+  #     responses:
+  #       "200":
+  #         $ref: "#/components/responses/nearby_success"
+  #       "400":
+  #         $ref: "#/components/responses/missing_parameter"
+  #       "401":
+  #         $ref: "#/components/responses/no_registered_key"
+  #       "402":
+  #         $ref: "#/components/responses/payment_exception"
+  #       "429":
+  #         $ref: "#/components/responses/api_limit_exceeded"
+
+  # Area API v2
+  /v2/api/search/area:
+    get:
+      operationId: area_v2
+      tags:
+        - v2.0
+      summary: Area
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/area?api_key=API_KEY&latitude=23.863233589986915&longitude=90.41347324848176'
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/area?api_key=API_KEY&latitude=23.863233589986915&longitude=90.41347324848176"          
+            payload={}
+            headers = {}          
+            response = requests.request("GET", url, headers=headers, data=payload)        
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/area?api_key=API_KEY&latitude=23.863233589986915&longitude=90.41347324848176',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/area_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Ward Geometry v2
+  v2/api/search/get/ward/geometry:
+    get:
+      operationId: ward_v2
+      tags:
+        - v2.0
+      summary: Ward Geometry
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/wardParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/get/ward/geometry?api_key=API_KEY&ward_number=31'
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/get/ward/geometry?api_key=API_KEY&ward_number=31"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/get/ward/geometry?api_key=API_KEY&ward_number=31',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/ward_geometry_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # Nearby API with Query param v2
+  /v2/api/search/nearby/{distance}/{limit}:
+    get:
+      operationId: nearby_query_param
+      tags:
+        - v2.0
+      summary: Nearby
+      # description: All Nearby API counts according to the limit parameter or number of places returned in response data.
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/distanceParam"
+        - $ref: "#/components/parameters/limitParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/search/nearby/0.5/10?api_key=API_KEY&longitude=90.38305163&latitude=23.87188719'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/search/nearby/0.5/10?api_key=API_KEY&longitude=90.38305163&latitude=23.87188719"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/nearby/0.5/10?api_key=API_KEY&longitude=90.38305163&latitude=23.87188719',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/nearby_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+  # problem
+  # Point in polygon v2
+  /v2/api/point-in-polygon:
+    post:
+      operationId: point-in-polygon_v2
+      tags:
+        - v2.0
+      summary: Point in Polygon
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/point-in-polygon?api_key=API_KEY' \
+            --form 'point="90.41697542000593,23.780273491928714"'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/point-in-polygon?api_key=API_KEY"
+            payload={'point': '90.41697542000593,23.780273491928714'}
+            files=[
+            ]
+            headers = {}
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+            data.append('point', '90.41697542000593,23.780273491928714');
+
+            var config = {
+              method: 'post',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/point-in-polygon?api_key=API_KEY',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/point_in_polygon_form"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/point_in_polygon_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+# Components
+components:
+  securitySchemes:
+    $ref: "./schemas/api_key.yaml"
+
+  # Parameters
+  parameters:
+    api_keyParam:
+      $ref: params/api_key.yaml
+    api_keyPathParam:
+      $ref: params/api_key_path.yaml
+    longitudeParam:
+      $ref: params/longitude.yaml
+    latitudeParam:
+      $ref: params/latitude.yaml
+    longitudePathParam:
+      $ref: params/longitudePath.yaml
+    latitudePathParam:
+      $ref: params/latitudePath.yaml
+    districtParam:
+      $ref: params/district.yaml
+    cityParam:
+      $ref: params/city.yaml
+    city_PathParam:
+      $ref: params/city_path.yaml
+    post_codeParam:
+      $ref: params/post_code.yaml
+    post_officeParam:
+      $ref: params/post_office.yaml
+    thanaParam:
+      $ref: params/thana.yaml
+    countryParam:
+      $ref: params/country.yaml
+    sub_districtParam:
+      $ref: params/sub_district.yaml
+    unionParam:
+      $ref: params/union.yaml
+    pauroshovaParam:
+      $ref: params/pauroshova.yaml
+    location_typeParam:
+      $ref: params/location_type.yaml
+    divisionParam:
+      $ref: params/division.yaml
+    addressParam:
+      $ref: params/address.yaml
+    areaParam:
+      $ref: params/area.yaml
+    banglaParam:
+      $ref: params/bangla.yaml
+    distanceParam:
+      $ref: params/distance.yaml
+    limitParam:
+      $ref: params/limit.yaml
+    ptypeParam:
+      $ref: params/ptype.yaml
+    qParam:
+      $ref: params/q.yaml
+    qParamCities:
+      $ref: params/q_cities.yaml
+    qParamUnions:
+      $ref: params/q_unions.yaml
+    qParamSubdistricts:
+      $ref: params/q_subdistricts.yaml
+    qParamDistricts:
+      $ref: params/q_districts.yaml
+    q2Param:
+      $ref: params/q2.yaml
+    matchParam:
+      $ref: params/match.yaml
+    pointParam:
+      $ref: params/point.yaml
+    pointsParam:
+      $ref: params/points.yaml
+    geometriesParam:
+      $ref: params/geometries.yaml
+    coordinatesParam:
+      $ref: params/coordinates.yaml
+    industrialParam:
+      $ref: params/industrial.yaml
+    wardParam:
+      $ref: params/ward.yaml
+
+  # Schemas
+  schemas:
+    api_limit_exceeded:
+      $ref: schemas/api_limit_exceeded.yaml
+    no_registered_key:
+      $ref: schemas/no_registered_key.yaml
+    missing_parameter:
+      $ref: schemas/missing_parameter.yaml
+    payment_exception:
+      $ref: schemas/payment_exception.yaml
+    rev_geo_success:
+      $ref: schemas/rev_geo_success.yaml
+    dncc_success:
+      $ref: schemas/dncc_success.yaml
+    wardzone_success:
+      $ref: schemas/wardzone_success.yaml
+    ward_success:
+      $ref: schemas/ward_success.yaml
+    ward_geometry_success:
+      $ref: schemas/ward_geometry_success.yaml
+    unions_success:
+      $ref: schemas/unions_success.yaml
+    cities_success:
+      $ref: schemas/cities_success.yaml
+    zone_success:
+      $ref: schemas/zone_success.yaml
+    subdistricts_success:
+      $ref: schemas/subdistricts_success.yaml
+    districts_success:
+      $ref: schemas/districts_success.yaml
+    nearby_success:
+      $ref: schemas/nearby_success.yaml
+    autocomplete_success:
+      $ref: schemas/autocomplete_success.yaml
+    autocomplete_bangla_success:
+      $ref: schemas/autocomplete_bangla_success.yaml
+    rupantor_geocoder_form_v1:
+      $ref: schemas/rupantor_geocoder_form_v1.yaml
+    rupantor_geocoder_form_v2:
+      $ref: schemas/rupantor_geocoder_form_v2.yaml
+    rupantor_geocoder_success:
+      $ref: schemas/rupantor_geocoder_success.yaml
+    rupantor_address_match_form:
+      $ref: schemas/rupantor_address_match_form.yaml
+    rupantor_address_match_success:
+      $ref: schemas/rupantor_address_match_success.yaml
+    routing_success:
+      $ref: schemas/routing_success.yaml
+    route_optimization_body:
+      $ref: schemas/route_optimization_body.yaml
+    route_optimization_success:
+      $ref: schemas/route_optimization_success.yaml
+    route_location_optimized_body:
+      $ref: schemas/route_location_optimized_body.yaml
+    route_location_optimized_success:
+      $ref: schemas/route_location_optimized_success.yaml
+    snap_to_road_success:
+      $ref: schemas/snap_to_road_success.yaml
+    route_match_success:
+      $ref: schemas/route_match_success.yaml
+    point_in_polygon_form:
+      $ref: schemas/point_in_polygon_form.yaml
+    point_in_polygon_success:
+      $ref: schemas/point_in_polygon_success.yaml
+    area_success:
+      $ref: schemas/area_success.yaml
+
+  # Responses
+  responses:
+    rev_geo_success:
+      $ref: responses/rev_geo_success.yaml
+    rev_geo_server_success:
+      $ref: responses/rev_geo_server_success.yaml
+    nearby_success:
+      $ref: responses/nearby_success.yaml
+    autocomplete_success:
+      $ref: responses/autocomplete_success.yaml
+    autocomplete_bangla_success:
+      $ref: responses/autocomplete_bangla_success.yaml
+    rupantor_geocoder_success:
+      $ref: responses/rupantor_geocoder_success.yaml
+    rupantor_address_match_success:
+      $ref: responses/rupantor_address_match_success.yaml
+    routing_success:
+      $ref: responses/routing_success.yaml
+    route_optimization_success:
+      $ref: responses/route_optimization_success.yaml
+    distance_success:
+      $ref: responses/distance_success.yaml
+    route_location_optimized_success:
+      $ref: responses/route_location_optimized_success.yaml
+    snap_to_road_success:
+      $ref: responses/span_to_road_success.yaml
+    route_match_success:
+      $ref: responses/route_match_success.yaml
+    api_limit_exceeded:
+      $ref: responses/api_limit_exceeded.yaml
+    no_registered_key:
+      $ref: responses/no_registered_key.yaml
+    missing_parameter:
+      $ref: responses/missing_parameter.yaml
+    payment_exception:
+      $ref: responses/payment_exception.yaml
+    dncc_success:
+      $ref: responses/dncc_success.yaml
+    wardzone_success:
+      $ref: responses/wardzone_success.yaml
+    ward_geometry_success:
+      $ref: responses/ward_geometry_success.yaml
+    unions_success:
+      $ref: responses/unions_success.yaml
+    cities_success:
+      $ref: responses/cities_success.yaml
+    ward_success:
+      $ref: responses/ward_success.yaml
+    zone_success:
+      $ref: responses/zone_success.yaml
+    subdistricts_success:
+      $ref: responses/subdistricts_success.yaml
+    districts_success:
+      $ref: responses/districts_success.yaml
+    point_in_polygon_success:
+      $ref: responses/point_in_polygon_success.yaml
+    area_success:
+      $ref: responses/area_success.yaml

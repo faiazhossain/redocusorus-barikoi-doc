@@ -1,0 +1,5 @@
+description: zone_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/zone_success.yaml

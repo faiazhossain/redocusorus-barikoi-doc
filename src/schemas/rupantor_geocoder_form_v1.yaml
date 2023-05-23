@@ -1,0 +1,16 @@
+type: object
+properties:
+  q:
+    type: string
+    description: matikata rd basa 572/k barikoi
+  thana:
+    type: boolean
+    description: yes
+  district:
+    type: boolean
+    description: yes
+  bangla:
+    type: boolean
+    description: yes
+required:
+  - q

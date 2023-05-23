@@ -1,0 +1,22 @@
+type: object
+properties:
+  places:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: number
+          default: 280
+        name:
+          type: string
+          default: "Khilgaon"
+        district:
+          type: string
+          default: "Dhaka"
+        center:
+          type: string
+          default: '{"type": "Point", "coordinates": [90.45477443959228, 23.759899924349806]}'
+  status:
+    type: number
+    default: 200
