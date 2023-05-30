@@ -3,4 +3,4 @@ in: query
 required: true
 schema:
   type: number
-  description: longitude
+  description: "90.35722628659195"

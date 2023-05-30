@@ -2,5 +2,5 @@ name: city
 in: query
 required: true
 schema:
-  type: boolean
-  description: city
+  type: string
+  description: dhaka

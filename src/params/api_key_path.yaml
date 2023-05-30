@@ -3,4 +3,4 @@ in: path
 required: true
 schema:
   type: string
-  description: api_key
+  description: API_KEY
