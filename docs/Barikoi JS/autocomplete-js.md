@@ -3,6 +3,10 @@ sidebar_label: "Autocomplete Tutorial"
 sidebar_position: 6
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Autocomplete Tutorial
 
 Autocomplete demo using OpenStreetMap.

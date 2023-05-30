@@ -3,6 +3,10 @@ sidebar_label: "Get an access token"
 sidebar_position: 4
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Get an access token
 
 If you don't have a Barikoi account, [sign up](https://developer.barikoi.com/register) for one here and then navigate to your Account page. Copy your default public token to your clipboard. After you've added the Barikoi Library as a dependency inside of your Android project, Paste the below code into your application class.

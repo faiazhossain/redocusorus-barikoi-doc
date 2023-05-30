@@ -3,6 +3,10 @@ sidebar_label: "Nearby"
 sidebar_position: 5
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Nearby
 
 # Bkoi.nearby(long, lat, callback)

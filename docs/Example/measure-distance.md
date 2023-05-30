@@ -3,6 +3,10 @@ sidebar_label: "Measure Distance"
 sidebar_position: 12
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Measure Distance
 
 <iframe src="http://barikoi.com:8080/measure-distance" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>

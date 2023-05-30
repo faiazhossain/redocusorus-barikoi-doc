@@ -3,6 +3,10 @@ sidebar_label: "Search"
 sidebar_position: 5
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Search Autocomplete Fragment
 
 To use the Barikoi Search Autocomplete Activity first add the below code snippet in your activity xml file.

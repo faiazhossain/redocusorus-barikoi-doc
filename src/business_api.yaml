@@ -10,62 +10,64 @@ info:
 
     Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API Helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.
 
-    # Overview
+      <h3>Overview</h3>
 
-    The currently listed Places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services:
+      The currently listed Places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services.
 
+    # Get started
 
-    ## Version 1
-     * [Reverse Geocode](#tag/v1.0/operation/revgeo_v1)
-     * [Reverse Geocoding (Server)](#tag/v1.0/operation/revgeo_server_v1)
-     * [Autocomplete](#tag/v1.0/operation/autocomplete_v1)
-     * [Distance](#tag/v1.0/operation/distance_v1)
-     * [Rupantor Geocoder](#tag/v1.0/operation/rupantor_geocoder_v1)
-     * [Rupantor Address Match](#tag/v1.0/operation/rupantor_address_match_v1)
-     * [Routing](#tag/v1.0/operation/routing_v1)
-     * [Snap To Road](#tag/v1.0/operation/snap_to_road_v1)
-     * [Route Match](#tag/v1.0/operation/route_match_v1)
-     * [Districts](#tag/v1.0/operation/districts_v1)
-     * [Sub Districts](#tag/v1.0/operation/sub_districts_v1)
-     * [Cities](#tag/v1.0/operation/cities_v1)
-     * [Unions](#tag/v1.0/operation/unions_v1)
-     * [Ward by Geolocation](#tag/v1.0/operation/ward_v1)
-     * [Zone by Geolocation](#tag/v1.0/operation/zone_v1)
-     * [Ward Zone by Geolocation](#tag/v1.0/operation/ward_zone_v1)
-     * [City Corporation by Geolocation](#tag/v1.0/operation/dncc_v1)
-
-     ## Version 2
-     * [Reverse Geocoding](#tag/v2.0/operation/revgeo_v2)
-     * [Autocomplete](#tag/v2.0/operation/autocomplete_v2)
-     * [Rupantor Geocoder](#tag/v2.0/operation/rupantor_geocoder_v2)
-     * [Rupantor Address Match](#tag/v2.0/operation/rupantor_address_match_v2)
-     * [Route Location Optimized](#tag/v2.0/operation/route_location_optimized)
-     * [Route Match](#tag/v2.0/operation/route_match_v2)
-     * [Area](#tag/v2.0/operation/area_v2)
-     * [Ward Geometry](#tag/v2.0/operation/ward_v2)
-     * [Nearby API with Query Param](#tag/v2.0/operation/nearby_query_param)
-     * [Point in Polygon](#tag/v2.0/operation/point-in-polygon_v2)
-
-
-    # Explore our APIs
-
-    ## Get started
-
-    [Create an API key](https://developer.barikoi.com/register)
+    To access our APIs you will need an API key. Generating an API key is easy. You just need to [Sign Up](https://developer.barikoi.com/register) and select your desired package. With our api key you are now ready to use our Bkoigl js data and map.
 
 
     Each API part has its own documentation. Jump to the desired API part and
     learn about the API through the given examples and tutorials.
 
+    <br/>
+    <br/>
+    <br/>
 
-    In addition, for each API there are specific sample requests that you can
-    send via Insomnia or Postman to see what the requests and responses look
-    like.
+      ### Version 2
+      * [Reverse Geocoding](#tag/v2.0/operation/revgeo_v2)
+      * [Autocomplete](#tag/v2.0/operation/autocomplete_v2)
+      * [Rupantor Geocoder](#tag/v2.0/operation/rupantor_geocoder_v2)
+      * [Rupantor Address Match](#tag/v2.0/operation/rupantor_address_match_v2)
+      * [Route Location Optimized](#tag/v2.0/operation/route_location_optimized)
+      * [Route Match](#tag/v2.0/operation/route_match_v2)
+      * [Area](#tag/v2.0/operation/area_v2)
+      * [Ward Geometry](#tag/v2.0/operation/ward_v2)
+      * [Nearby API with Query Param](#tag/v2.0/operation/nearby_query_param)
+      * [Point in Polygon](#tag/v2.0/operation/point-in-polygon_v2)
 
 
-    ## Contact Us
 
-    If you have problems or questions, please read the following information:
+      <br/>
+      <br/>
+      <br/>
+
+      ### Version 1 
+
+      > #### Version 1 will be depricated after 30/09/2023, therefore it is strongly advised for everyone to switch to   version 2.
+      
+      * [Reverse Geocode](#tag/v1.0/operation/revgeo_v1)
+      * [Reverse Geocoding (Server)](#tag/v1.0/operation/revgeo_server_v1)
+      * [Autocomplete](#tag/v1.0/operation/autocomplete_v1)
+      * [Distance](#tag/v1.0/operation/distance_v1)
+      * [Rupantor Geocoder](#tag/v1.0/operation/rupantor_geocoder_v1)
+      * [Rupantor Address Match](#tag/v1.0/operation/rupantor_address_match_v1)
+      * [Routing](#tag/v1.0/operation/routing_v1)
+      * [Snap To Road](#tag/v1.0/operation/snap_to_road_v1)
+      * [Route Match](#tag/v1.0/operation/route_match_v1)
+      * [Districts](#tag/v1.0/operation/districts_v1)
+      * [Sub Districts](#tag/v1.0/operation/sub_districts_v1)
+      * [Cities](#tag/v1.0/operation/cities_v1)
+      * [Unions](#tag/v1.0/operation/unions_v1)
+      * [Ward by Geolocation](#tag/v1.0/operation/ward_v1)
+      * [Zone by Geolocation](#tag/v1.0/operation/zone_v1)
+      * [Ward Zone by Geolocation](#tag/v1.0/operation/ward_zone_v1)
+      * [City Corporation by Geolocation](#tag/v1.0/operation/dncc_v1)
+
+    # Contact Us
+     For any query or tech support please mail at support@barikoi.com
 
   # version: 2.0.0
   termsOfService: https://www.barikoi.com/data-privacy
@@ -78,11 +80,10 @@ info:
     altText: Barikoi
 
 tags:
-  - name: v1.0
-    description: Version 1.0 Endpoints
-
   - name: v2.0
     description: Version 2.0 Endpoints
+  - name: v1.0
+    description: Version 1.0 Endpoints
 
 servers:
   - url: https://barikoi.xyz

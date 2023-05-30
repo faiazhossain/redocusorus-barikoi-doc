@@ -3,6 +3,10 @@ sidebar_label: "Geocoding"
 sidebar_position: 3
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Geocoding
 
 # Geocode

@@ -3,6 +3,10 @@ sidebar_label: "Display-basic-map"
 sidebar_position: 2
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Display basic map
 
 # Overview

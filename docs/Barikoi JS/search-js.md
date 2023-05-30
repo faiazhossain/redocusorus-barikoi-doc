@@ -3,6 +3,10 @@ sidebar_label: "Search"
 sidebar_position: 2
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Search
 
 # Bkoi.search(string, callback)

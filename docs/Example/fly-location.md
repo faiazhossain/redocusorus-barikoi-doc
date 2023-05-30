@@ -3,6 +3,10 @@ sidebar_label: "Fly to Location"
 sidebar_position: 9
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Fly to Location
 
 <iframe src="http://barikoi.com:8080/fly-to-location" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>

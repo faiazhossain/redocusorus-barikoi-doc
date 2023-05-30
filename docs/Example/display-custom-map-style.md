@@ -3,6 +3,10 @@ sidebar_label: "Display custom map style"
 sidebar_position: 3
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Display custom map style
 
 Bkoi GL JS provides a JavaScript library to render interactive maps that display raster or vector tiles, markers, static and dynamic graphic elements for your mapping and visualization needs. It is part of the Bkoi GL ecosystem.

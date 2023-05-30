@@ -3,6 +3,10 @@ sidebar_label: "Fit Bounds"
 sidebar_position: 10
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Fit bounds
 
 <iframe src="http://barikoi.com:8080/fit-bounds" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>

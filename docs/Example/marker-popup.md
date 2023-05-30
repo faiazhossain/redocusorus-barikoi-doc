@@ -3,6 +3,10 @@ sidebar_label: "Add popup to marker"
 sidebar_position: 6
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Add popup to marker
 
 Attach a <span style={{color:"#e83e8c"}}>Popup</span> to a <span style={{color:"#e83e8c"}}>Marker</span> and display it on click.

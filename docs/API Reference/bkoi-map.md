@@ -3,6 +3,10 @@ sidebar_label: "Map"
 sidebar_position: 1
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Map
 
 <strong style={{color:"#6B7C92;"}}>Extends Evented</strong>

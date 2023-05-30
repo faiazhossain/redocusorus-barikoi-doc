@@ -3,6 +3,10 @@ sidebar_label: "Add Maps Control"
 sidebar_position: 4
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Add map controls
 
 <iframe

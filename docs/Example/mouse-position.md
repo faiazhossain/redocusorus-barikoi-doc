@@ -3,6 +3,10 @@ sidebar_label: "Get Mouse position"
 sidebar_position: 8
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Get mouse position
 
 <iframe src="http://barikoi.com:8080/get-mouse-position" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>

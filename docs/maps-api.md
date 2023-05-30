@@ -3,12 +3,16 @@ sidebar_label: "Quickstart!"
 sidebar_position: 1
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Quickstart
 
 # My Map
 
 <iframe src="https://bkoi-gl-example-display-map.surge.sh/" width="100%" height="280px" frameborder="0" allowfullscreen ></iframe>
-Get your own API key if you want to use Bkoi GL JS data in your project.<br/> <br/>
+Get your own <a href="https://developer.barikoi.com/">API key</a> if you want to use Bkoi GL JS data in your project.<br/> <br/>
 
 Include the JavaScript and CSS files in the head tag of your HTML file.
 

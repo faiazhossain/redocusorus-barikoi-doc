@@ -3,6 +3,10 @@ sidebar_label: "Barikoi Location Library"
 sidebar_position: 3
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Barikoi Location Library
 
 # Install the Barikoi Location Library for Android

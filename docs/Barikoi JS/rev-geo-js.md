@@ -3,6 +3,10 @@ sidebar_label: "Reverse Geocoding"
 sidebar_position: 4
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Reverse Geocoding
 
 # Reverse Geocode

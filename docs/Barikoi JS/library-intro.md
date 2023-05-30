@@ -3,6 +3,10 @@ sidebar_label: "Getting-started"
 sidebar_position: 1
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # Getting started
 
 # Get started with barikoi.js

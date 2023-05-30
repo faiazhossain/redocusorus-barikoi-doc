@@ -3,6 +3,10 @@ sidebar_label: "GeoJSON Layer"
 sidebar_position: 15
 ---
 
+<head>
+  <title>Barikoi Documentation</title>
+</head>
+
 # GeoJSON layer
 
 <iframe src="http://barikoi.com:8080/geojson-layer" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
