@@ -3,4 +3,4 @@ in: query
 required: true
 schema:
   type: number
-  description: ward_number
+  description: "31"

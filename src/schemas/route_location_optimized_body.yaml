@@ -2,6 +2,7 @@ type: object
 properties:
   api_key:
     type: string
+    description: API_KEY
     example: api_key
   locations:
     type: array

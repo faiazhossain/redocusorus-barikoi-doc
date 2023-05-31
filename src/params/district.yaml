@@ -2,5 +2,5 @@ name: district
 in: query
 required: false
 schema:
-  type: string
+  type: boolean
   description: "true"

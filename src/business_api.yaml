@@ -93,7 +93,7 @@ security:
   - api_key: []
 paths:
   # Version 1.0
-
+  # working
   # Reverse Geocoding API v1
   /v1/api/search/reverse/{api_key}/geocode:
     get:
@@ -241,6 +241,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/api_keyPathParam"
         - $ref: "#/components/parameters/qParam"
+        - $ref: "#/components/parameters/cityParam"
         - $ref: "#/components/parameters/post_officeParam"
         - $ref: "#/components/parameters/industrialParam"
         - $ref: "#/components/parameters/banglaParam"
@@ -289,7 +290,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Distance
-  /v1/api/distance/{api_key}/{longitude}/{latitude}:
+  /v1/api/distance/{api_key}/{longitude},{latitude}/{longitude},{latitude}:
     get:
       operationId: distance_v1
       tags:
@@ -344,7 +345,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Rupantor Geocoder v1
-  /v1/api/search/{api_key}/rupantor/geocode?q=:
+  /v1/api/search/{API_KEY}/rupantor/geocode:
     post:
       operationId: rupantor_geocoder_v1
       tags:
@@ -353,7 +354,7 @@ paths:
       description: Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete or not. Rupantor Geocoder only supports FormData. So use FormData object to send your data. Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.
 
       parameters:
-        - $ref: "#/components/parameters/api_keyPathParam"
+        - $ref: "#/components/parameters/api_keyPathParamUpper"
 
       x-code-samples:
         - lang: Curl
@@ -554,7 +555,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Snap to Road v1
-  /v1/api/routing/{api_key}/nearest?point=:
+  /v1/api/routing/{api_key}/nearest:
     get:
       operationId: snap_to_road_v1
       tags:
@@ -568,7 +569,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: |
-            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658'
+            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136,23.7267599142696%3B90.38438265469962,23.726622279057658'
 
         - lang: Python
           source: |
@@ -609,7 +610,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Route Match v1
-  /v1/api/routing/{api_key}/matching?points=:
+  /v1/api/routing/{api_key}/matching:
     get:
       operationId: route_match_v1
       tags:
@@ -623,7 +624,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: |
-            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658'
+            curl --location 'https://barikoi.xyz/v1/api/routing/API_KEY/matching?points=90.38436119310136,23.7267599142696%3B90.38438265469962,23.726622279057658'
 
         - lang: Python
           source: |
@@ -664,7 +665,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Districts v1
-  /v1/api/{api_key}/districts?q=:
+  /v1/api/{api_key}/districts:
     get:
       operationId: districts_v1
       tags:
@@ -721,7 +722,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Subdistricts v1
-  /v1/api/{api_key}/sub_districts?q=:
+  /v1/api/{api_key}/sub_districts:
     get:
       operationId: sub_districts_v1
       tags:
@@ -778,7 +779,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Cities v1
-  /v1/api/{api_key}/cities?q=:
+  /v1/api/{api_key}/cities:
     get:
       operationId: cities_v1
       tags:
@@ -835,7 +836,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Unions v1
-  /v1/api/{api_key}/unions?q=:
+  /v1/api/{api_key}/unions:
     get:
       operationId: unions_v1
       tags:
@@ -1249,13 +1250,13 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Rupantor Geocoder v2
-  /v2/api/search/rupantor/geocode:
+  /v2/api/search/rupantor/geocode?:
     post:
       operationId: rupantor_geocoder_v2
       tags:
         - v2.0
       summary: Rupantor Geocoder
-      description: Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete or not. Rupantor Geocoder only supports FormData. So use FormData object to send your data. Rupantor Geocoder needs Geocode API to fucntion properly. One Rupantor Geocoder request requires two Geocode API requests.
+      description: Rupantor Geocoder API for Developers. It formats the given address and searches for the address and gives a status if the address is complete or not. Rupantor Geocoder only supports FormData. So use FormData object to send your data. Rupantor Geocoder needs Geocode API to function properly. One Rupantor Geocoder request requires two Geocode API requests.
 
       parameters:
         - $ref: "#/components/parameters/api_keyParam"
@@ -1328,7 +1329,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Rupantor Address Match v2
-  /v2/api/search/rupantor/geocode?api_key=:
+  /v2/api/search/rupantor/geocode:
     post:
       operationId: rupantor_address_match_v2
       tags:
@@ -1616,6 +1617,63 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
+  # Snap to Road v2
+  /v2/api/routing/nearest:
+    get:
+      operationId: snap_to_road_v2
+      tags:
+        - v2.0
+      summary: Snap to Road
+      description: " "
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/pointParam"
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location 'https://barikoi.xyz/v2/api/routing/nearest?point=23.806525320635505,90.36129978225671&api_key=API_KEY'
+
+        - lang: Python
+          source: |
+            import requests
+            url = "https://barikoi.xyz/v2/api/routing/nearest?point=23.806525320635505,90.36129978225671&api_key=API_KEY"
+            payload={}
+            headers = {}
+            response = requests.request("GET", url, headers=headers, data=payload)
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/routing/nearest?point=23.806525320635505,90.36129978225671&api_key=API_KEY',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+      responses:
+        "200":
+          $ref: "#/components/responses/snap_to_road_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
   # Route Match v2
   /v2/api/routing/matching:
     get:
@@ -1631,10 +1689,11 @@ paths:
         - lang: Curl
           source: |
             curl --location --request GET 'https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658&api_key=<BARIKOI_API_KEY>'
+
         - lang: Python
           source: |
             import requests
-            url = "https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658&api_key=API_KEY"
+            url = "https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658&api_key=API_KEY"
             payload={}
             headers = {}
             response = requests.request("GET", url, headers=headers, data=payload)            
@@ -1646,7 +1705,7 @@ paths:
             var config = {
               method: 'get',
             maxBodyLength: Infinity,
-              url: 'https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136%2C23.7267599142696%3B90.38438265469962%2C23.726622279057658&api_key=API_KEY',
+              url: 'https://barikoi.xyz/v2/api/routing/matching?points=90.38436119310136,23.7267599142696;90.38438265469962,23.726622279057658&api_key=API_KEY',
               headers: { }
             };
 
@@ -1861,7 +1920,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Ward Geometry v2
-  v2/api/search/get/ward/geometry:
+  /v2/api/search/get/ward/geometry:
     get:
       operationId: ward_v2
       tags:
@@ -1916,7 +1975,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Nearby API with Query param v2
-  /v2/api/search/nearby/{distance}/{limit}:
+  /v2/api/search/nearby/0.5/10:
     get:
       operationId: nearby_query_param
       tags:
@@ -1926,8 +1985,6 @@ paths:
 
       parameters:
         - $ref: "#/components/parameters/api_keyParam"
-        - $ref: "#/components/parameters/distanceParam"
-        - $ref: "#/components/parameters/limitParam"
         - $ref: "#/components/parameters/longitudeParam"
         - $ref: "#/components/parameters/latitudeParam"
 
@@ -2060,6 +2117,8 @@ components:
       $ref: params/api_key.yaml
     api_keyPathParam:
       $ref: params/api_key_path.yaml
+    api_keyPathParamUpper:
+      $ref: params/api_key_path_upper.yaml
     longitudeParam:
       $ref: params/longitude.yaml
     latitudeParam:
@@ -2122,6 +2181,8 @@ components:
       $ref: params/point.yaml
     pointsParam:
       $ref: params/points.yaml
+    pointsPathParam:
+      $ref: params/pointsPath.yaml
     geometriesParam:
       $ref: params/geometries.yaml
     coordinatesParam:

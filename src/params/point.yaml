@@ -2,5 +2,5 @@ name: point
 in: query
 required: true
 schema:
-  type: number
-  description: 23.80474653651567,90.36288913339376
+  type: string
+  example: 23.80474653651567,90.36288913339376

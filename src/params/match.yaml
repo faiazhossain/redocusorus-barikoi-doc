@@ -3,4 +3,4 @@ in: query
 required: true
 schema:
   type: boolean
-  description: match
+  description: "true"
