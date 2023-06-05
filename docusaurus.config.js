@@ -127,15 +127,15 @@ const config = {
             to: "/android/android-intro",
             label: "Android Location Library",
             position: "left",
+          },         
+          {
+            to: "/flutter/barikoi-map-place-picker", // ./docs-api/Intro.md
+            label: "Flutter Library",
+            position: "left",
           },
           {
             to: "/pricing/pricing-call", // ./docs-api/Intro.md
             label: "Pricing",
-            position: "left",
-          },
-          {
-            to: "/flutter/barikoi-map-place-picker", // ./docs-api/Intro.md
-            label: "Flutter Library",
             position: "left",
           },
         ],

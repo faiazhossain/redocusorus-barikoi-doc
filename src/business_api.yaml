@@ -8,11 +8,11 @@ info:
 
     # Introduction
 
-    Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API Helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.
+    Welcome to Barikoi API. Thank you for checking a Bangladeshi location data provider API. Our API helps you to find address, geocode and reverse geocode place and city corporation information in Dhaka in our local context.
 
       <h3>Overview</h3>
 
-      The currently listed Places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services.
+      The currently listed places API's are for autocomplete, post office autocomplete, geocoding, reverse geocoding, nearby, distance & rupantor geocoder. And City Corporation API's are Ward by Geolocation, Zone by Geolocation, Ward and Zone by Geolocation, City Corporation by Geolocation services.
 
     # Get started
 
@@ -1343,22 +1343,24 @@ paths:
       x-code-samples:
         - lang: Curl
           source: |
-            curl --location 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode' \
+            curl --location 'https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY' \
             --form 'q="হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর"' \
-            --form 'q2="house 18, road 5, block G, section 2, mirpur"' \
+            --form 'q2="house 18, road 5, block j, section 2, mirpur"' \
             --form 'match="yes"'
 
         - lang: Python
           source: |
             import requests
-            url = "https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode"
+            url = "https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY"            
             payload={'q': 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর',
-            'q2': 'house 18, road 5, block G, section 2, mirpur',
+            'q2': 'house 18, road 5, block j, section 2, mirpur',
             'match': 'yes'}
-            files=[]
-            headers = {}
-            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+            files=[            
+            ]
+            headers = {}            
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)            
             print(response.text)
+          
 
         - lang: Node
           source: |
@@ -1366,17 +1368,19 @@ paths:
             var FormData = require('form-data');
             var data = new FormData();
             data.append('q', 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর');
-            data.append('q2', 'house 18, road 5, block G, section 2, mirpur');
+            data.append('q2', 'house 18, road 5, block j, section 2, mirpur');
             data.append('match', 'yes');
+            
             var config = {
               method: 'post',
-              maxBodyLength: Infinity,
-              url: 'https://barikoi.xyz/v1/api/search/API_KEY/rupantor/geocode',
+            maxBodyLength: Infinity,
+              url: 'https://barikoi.xyz/v2/api/search/rupantor/geocode?api_key=API_KEY',
               headers: { 
                 ...data.getHeaders()
               },
               data : data
             };
+            
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -1384,6 +1388,7 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
+          
 
       requestBody:
         required: true
