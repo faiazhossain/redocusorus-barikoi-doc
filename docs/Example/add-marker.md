@@ -9,7 +9,7 @@ sidebar_position: 5
 
 # Add marker
 
-<iframe src="http://barikoi.com:8080/add-marker" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
+<iframe src="https://barikoi.com:8080/add-marker" width="100%" height="280px" frameborder="0" style={{border:"1px solid black"}} allowfullscreen></iframe>
 
 Add Marker on Map load
 
