@@ -1,4 +1,6 @@
 ---
+id: 'android-rev-geo'
+title: 'Reverse Geocoding Library'
 sidebar_label: "Reverse Geocoding Library"
 sidebar_position: 6
 ---
@@ -7,9 +9,8 @@ sidebar_position: 6
   <title>Barikoi Documentation</title>
 </head>
 
-# Reverse Geocoding
+<!-- # Reverse Geocoding -->
 
-# Reverse Geocoding Library
 
 import Gist from 'react-gist';
 

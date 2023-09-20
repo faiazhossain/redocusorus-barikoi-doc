@@ -125,7 +125,7 @@ const config = {
           { to: "/docs/maps-api", label: "Maps API", position: "left" },
           {
             to: "/android/android-intro",
-            label: "Android Location Library",
+            label: "Android",
             position: "left",
           },         
           {

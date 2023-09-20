@@ -1,4 +1,6 @@
 ---
+id: "android-nearby"
+title: "Nearby Library"
 sidebar_label: "Nearby"
 sidebar_position: 7
 ---
@@ -6,8 +8,6 @@ sidebar_position: 7
 <head>
   <title>Barikoi Documentation</title>
 </head>
-
-# Nearby Library
 
 Nearby Request Example
 

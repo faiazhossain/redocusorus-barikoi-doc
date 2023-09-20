@@ -1,4 +1,6 @@
 ---
+id: "android-intro"
+title: "Android Intro"
 sidebar_label: "Getting Started"
 sidebar_position: 1
 ---
@@ -7,7 +9,6 @@ sidebar_position: 1
   <title>Barikoi Documentation</title>
 </head>
 
-# Getting Started
 
 # First steps with the Barikoi Location Library for Android
 

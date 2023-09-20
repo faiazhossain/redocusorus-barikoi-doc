@@ -1,4 +1,6 @@
 ---
+id: "android-search"
+title: "Search Autocomplete Fragment"
 sidebar_label: "Search"
 sidebar_position: 5
 ---
@@ -7,7 +9,6 @@ sidebar_position: 5
   <title>Barikoi Documentation</title>
 </head>
 
-# Search Autocomplete Fragment
 
 To use the Barikoi Search Autocomplete Activity first add the below code snippet in your activity xml file.
 

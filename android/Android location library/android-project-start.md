@@ -1,4 +1,6 @@
 ---
+id: 'android-project-start'
+title: 'Create an Android Studio project'
 sidebar_label: "Create an Android Studio project"
 sidebar_position: 2
 ---
@@ -7,7 +9,6 @@ sidebar_position: 2
   <title>Barikoi Documentation</title>
 </head>
 
-## Create an Android Studio project
 
 Familiarize yourself with Android Studio. You'll need to create a new project with an empty activity. Use the following options when creating a new Android Studio project:
 

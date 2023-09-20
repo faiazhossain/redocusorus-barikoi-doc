@@ -1,4 +1,6 @@
 ---
+id: "android-location-library"
+title: "Barikoi location library"
 sidebar_label: "Barikoi Location Library"
 sidebar_position: 3
 ---
@@ -7,7 +9,6 @@ sidebar_position: 3
   <title>Barikoi Documentation</title>
 </head>
 
-# Barikoi Location Library
 
 # Install the Barikoi Location Library for Android
 
