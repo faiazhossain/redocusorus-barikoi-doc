@@ -72,6 +72,11 @@ const config = {
           // Change with your site colors
           primaryColor: "#4E9F3D",
         },
+        prism: {
+          additionalLanguages: [
+            'kotlin',
+          ],
+        },
       },
     ],
   ],
@@ -147,6 +152,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['kotlin'],
       },
     }),
 };
