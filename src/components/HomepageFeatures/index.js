@@ -1,64 +1,101 @@
 import React from "react";
-import clsx from "clsx";
-import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
-import { Button, Col, Row, ConfigProvider } from "antd";
+import { Col, Row } from "antd";
 
 export default function HomepageFeatures() {
   return (
     // this code block is responsible for Home Buttons
-    <section className={styles.features}>
-      <div className={styles.grid_center}>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: "#00b96b",
-            },
-          }}
-        >
-          <Row
-            justify="center"
-            align="center"
-            gutter={{ xs: 8, sm: 16, md: 24, lg: 34 }}
+    <section style={{ ...features }}>
+      <div style={{ ...grid_center }}>
+        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 34 }}>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
           >
-            <Col
-              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
+            <Link
+              style={{
+                ...Buttonstyle,
+              }}
+              to="/api"
             >
-              <Link to="/api">
-                <Button type="primary">BARIKOI API</Button>
-              </Link>
-            </Col>
-            <Col
-              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
+              {" "}
+              BARIKOI API
+            </Link>
+          </Col>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
+          >
+            <Link
+              style={{
+                ...Buttonstyle,
+              }}
+              to="/docs/maps-api"
             >
-              <Link to="/docs/maps-api">
-                <Button type="primary">MAPS API</Button>
-              </Link>
-            </Col>
-            <Col
-              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
+              {" "}
+              MAPS API
+            </Link>
+          </Col>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
+          >
+            <Link style={{ ...Buttonstyle }} to="/android/android-intro">
+              ANDROID SDK
+            </Link>
+          </Col>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
+          >
+            <Link
+              style={{
+                ...Buttonstyle,
+              }}
+              to="/pricing/pricing-call"
             >
-              <Link to="/android/android-intro">
-                <Button type="primary">ANDROID SDK</Button>
-              </Link>
-            </Col>
-            <Col
-              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
+              PRICING
+            </Link>
+          </Col>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
+          >
+            <Link
+              style={{
+                ...Buttonstyle,
+              }}
+              to="/Flutter/Barikoi Map Flutter/flutter-intro"
             >
-              <Link to="/pricing/pricing-call">
-                <Button type="primary">PRICING</Button>
-              </Link>
-            </Col>
-            <Col
-              className={`${styles.col_center} ${styles.margin_bottom} "gutter-row"`}
-            >
-              <Link to="/flutter/barikoi-map-place-picker">
-                <Button type="primary">Flutter Library</Button>
-              </Link>
-            </Col>
-          </Row>
-        </ConfigProvider>
+              {" "}
+              Flutter Library
+            </Link>
+          </Col>
+        </Row>
       </div>
     </section>
   );
 }
+
+const features = {
+  display: "flex",
+  alignItems: "center",
+  padding: "2rem 0",
+  width: "100%",
+  marginTop: "2rem",
+};
+
+const grid_center = {
+  width: "100vw",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const Buttonstyle = {
+  background: "#00b96b",
+  color: "white",
+  padding: "9px 14px",
+  borderRadius: "12px",
+  textDecoration: "none",
+};

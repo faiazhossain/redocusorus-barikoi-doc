@@ -16,7 +16,7 @@ For this example you will need:
 ### Get Dependencies
 Add bintray Maven repositories to your project-level Gradle file (usually {project}/{app-module}/build.gradle).
 
-```gradle
+```kotlin
 allprojects {
     repositories {
     ...
@@ -26,7 +26,7 @@ allprojects {
 ```
 
 Then add the dependency in your dependencies { ... }:
-```gradle
+```kotlin
 implementation("org.maplibre.gl:android-sdk:10.2.0")
 ```
 

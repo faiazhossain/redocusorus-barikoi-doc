@@ -46,7 +46,7 @@ info:
 
       ### Version 1 
 
-      > #### Version 1 will be depricated after 30/09/2023, therefore it is strongly advised for everyone to switch to   version 2.
+      > #### Version 1 will be depricated after 31/10/2023, therefore it is strongly advised for everyone to switch to   version 2.
       
       * [Reverse Geocode](#tag/v1.0/operation/revgeo_v1)
       * [Reverse Geocoding (Server)](#tag/v1.0/operation/revgeo_server_v1)

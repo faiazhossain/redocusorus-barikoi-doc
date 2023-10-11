@@ -1,13 +1,12 @@
 ---
 sidebar_label: "Barikoi map place picker"
+title: "Barikoi map place picker"
 sidebar_position: 1
 ---
 
 <head>
   <title>Barikoi Documentation</title>
 </head>
-
-# Barikoi map place picker
 
 Barikoi Map Place picker is a flutter library that provides option to pick a place from map location or search using Barikoi Map and APIs.
 

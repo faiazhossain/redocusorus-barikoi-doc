@@ -73,9 +73,7 @@ const config = {
           primaryColor: "#4E9F3D",
         },
         prism: {
-          additionalLanguages: [
-            'kotlin',
-          ],
+          additionalLanguages: ["kotlin"],
         },
       },
     ],
@@ -92,26 +90,24 @@ const config = {
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'android',
-        path: 'android',
-        routeBasePath: 'android',
-        sidebarPath: require.resolve('./sidebars.js'),
-      }, 
+        id: "android",
+        path: "android",
+        routeBasePath: "android",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'flutter',
-        path: 'flutter',
-        routeBasePath: 'flutter',
-        sidebarPath: require.resolve('./sidebars.js'),
-      }, 
+        id: "flutter",
+        path: "flutter",
+        routeBasePath: "flutter",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
     ],
-
   ],
-  
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -132,10 +128,10 @@ const config = {
             to: "/android/android-intro",
             label: "Android",
             position: "left",
-          },         
+          },
           {
-            to: "/flutter/barikoi-map-place-picker", // ./docs-api/Intro.md
-            label: "Flutter Library",
+            to: "/Flutter/Barikoi Map Flutter/flutter-intro", // ./docs-api/Intro.md
+            label: "Flutter",
             position: "left",
           },
           {
@@ -152,7 +148,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['kotlin'],
+        additionalLanguages: ["kotlin", "dart"],
       },
     }),
 };
