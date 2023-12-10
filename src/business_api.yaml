@@ -2192,7 +2192,7 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
-# Get geo fence points v2
+# Get all geo fence points v2
   /v2/api/get-geo-fence-points:
     get:
       operationId: get-geo-fence-points
@@ -2246,11 +2246,11 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "#/components/schemas/get_point_success"
+              $ref: "#/components/schemas/get_single_point_success"
 
       responses:
         "200":
-          $ref: "#/components/responses/get_point_success"
+          $ref: "#/components/responses/get_single_point_success"
         "400":
           $ref: "#/components/responses/missing_parameter"
         "401":
@@ -2259,6 +2259,140 @@ paths:
           $ref: "#/components/responses/payment_exception"
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
+
+# Get single geo fence points v2
+  /v2/api/get-geo-fence-points/id:
+    get:
+      operationId: get-single-geo-fence-points
+      tags:
+        - v2.0
+      summary: Get geo fence point by id
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request GET 'https://barikoi.xyz/v2/api/get-geo-fence-point/65475dbad1e00?api_key=API_KEY'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/get-geo-fence-point/65475dbad1e00?api_key=API_KEY"
+            
+            payload={}
+            headers = {}
+            
+            response = requests.request("GET", url, headers=headers, data=payload)
+            
+            print(response.text)
+          
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+              url: 'https://barikoi.xyz/v2/api/get-geo-fence-point/65475dbad1e00?api_key=API_KEY',
+              headers: { }
+            };
+            
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+          
+
+
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/get_single_point_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/get_single_point_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+  # Update single geo fence points v2
+  /v2/api/update-geo-fence-point/id:
+    post:
+      operationId: update-point
+      tags:
+        - v2.0
+      summary: Update Geofence point by id
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/radiusParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request POST 'https://barikoi.xyz/v2/api/update-geo-fence-point/65475dbad1e00?api_key=API_KEY&radius=55'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/update-geo-fence-point/65475dbad1e00?api_key=API_KEY&radius=55"
+            
+            payload={}
+            headers = {}
+            
+            response = requests.request("POST", url, headers=headers, data=payload)
+            
+            print(response.text)
+          
+
+        - lang: Node
+          source: |
+            var request = require('request');
+            var options = {
+              'method': 'POST',
+              'url': 'https://barikoi.xyz/v2/api/update-geo-fence-point/65475dbad1e00?api_key=API_KEY&radius=55',
+              'headers': {
+              }
+            };
+            request(options, function (error, response) {
+              if (error) throw new Error(error);
+              console.log(response.body);
+            });
+            
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/update_single_point_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/update_single_point_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
 
 # Components
 components:
@@ -2420,6 +2554,10 @@ components:
       $ref: schemas/add_point_success.yaml
     get_point_success:
       $ref: schemas/get_point_success.yaml
+    get_single_point_success:
+      $ref: schemas/get_single_point_success.yaml
+    update_single_point_success:
+      $ref: schemas/update_single_point_success.yaml
     
 
   # Responses
@@ -2484,3 +2622,7 @@ components:
       $ref: responses/add_point_success.yaml
     get_point_success:
       $ref: responses/get_point_success.yaml
+    get_single_point_success:
+      $ref: responses/get_single_point_success.yaml    
+    update_single_point_success:
+      $ref: responses/update_single_point_success.yaml

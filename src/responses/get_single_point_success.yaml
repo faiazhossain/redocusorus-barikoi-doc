@@ -1,0 +1,5 @@
+description: get_point_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/get_point_success.yaml
