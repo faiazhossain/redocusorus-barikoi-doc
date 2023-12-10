@@ -2,9 +2,7 @@ type: object
 properties:
   message:
     type: string
-    default: Point not inside polygon
+    example: Geo fence point added
   status:
-    type: number
+    type: integer
     default: 200
-  data:
-    type: "null"

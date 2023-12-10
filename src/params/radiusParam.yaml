@@ -1,0 +1,6 @@
+name: radius
+in: query
+required: true
+schema:
+  type: number
+  description: '70'

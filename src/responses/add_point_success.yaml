@@ -1,0 +1,5 @@
+description: add_point_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/add_point_success.yaml

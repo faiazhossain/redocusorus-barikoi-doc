@@ -1,0 +1,52 @@
+type: object
+properties:
+  message:
+    type: string
+    example: Geo fence points
+  status:
+    type: integer
+    default: 200
+  data:
+    type: array
+    items:
+     - type: object
+       properties:
+          id:
+            type: string
+            example: 65475dbad1e00
+          name:
+            type: string
+            example: Songsodh vaban
+          radius:
+            type: string
+            example: 55
+          longitude:
+            type: string
+            example: '90.37852866512583'
+          latitude:
+            type: string
+            example: '23.76245538673939'
+          user_id:
+            type: integer
+            example: 2978
+     - type: object
+       properties:
+            id:
+              type: string
+              example: 65701af5854b8
+            name:
+              type: string
+              example: Songsodh vaban
+            radius:
+              type: string
+              example: 70
+            longitude:
+              type: string
+              example: '90.37852866512583'
+            latitude:
+              type: string
+              example: '23.76245538673939'
+            user_id:
+              type: integer
+              example: 2978
+

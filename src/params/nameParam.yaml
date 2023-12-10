@@ -1,0 +1,6 @@
+name: name
+in: query
+required: true
+schema:
+  type: name
+  description: "Songsodh vaban"

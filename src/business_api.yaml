@@ -37,6 +37,7 @@ info:
       * [Ward Geometry](#tag/v2.0/operation/ward_v2)
       * [Nearby API with Query Param](#tag/v2.0/operation/nearby_query_param)
       * [Point in Polygon](#tag/v2.0/operation/point-in-polygon_v2)
+      * [Geofencing Business](#tag/v2.0/operation/point-in-polygon_v2)
 
 
 
@@ -46,7 +47,7 @@ info:
 
       ### Version 1 
 
-      > #### Version 1 will be depricated after 31/10/2023, therefore it is strongly advised for everyone to switch to   version 2.
+      > #### Version 1 will be depricated after 31/12/2023, therefore it is strongly advised for everyone to switch to   version 2.
       
       * [Reverse Geocode](#tag/v1.0/operation/revgeo_v1)
       * [Reverse Geocoding (Server)](#tag/v1.0/operation/revgeo_server_v1)
@@ -424,7 +425,7 @@ paths:
           $ref: "#/components/responses/api_limit_exceeded"
 
   # Rupantor Address Match v1
-  /v1/api/search/{api_key}/rupantor/geocode:
+  /v1/api/search/{ api_key }/rupantor/geocode:
     post:
       operationId: rupantor_address_match_v1
       tags:
@@ -2038,7 +2039,6 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
-  # problem
   # Point in polygon v2
   /v2/api/point-in-polygon:
     post:
@@ -2102,6 +2102,155 @@ paths:
       responses:
         "200":
           $ref: "#/components/responses/point_in_polygon_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+# Geofencing Business
+
+  # Point in polygon v2
+  /v2/api/set-geo-fence-point:
+    post:
+      operationId: set-geo-fence-point
+      tags:
+        - v2.0
+        
+      summary: Set geofence point
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+        - $ref: "#/components/parameters/nameParam"
+        - $ref: "#/components/parameters/radiusParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request POST 'https://barikoi.xyz/v2/api/set-geo-fence-point?api_key=API_KEY&latitude=23.76245538673939&longitude=90.37852866512583&name=Songsodh vaban&radius=70'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/set-geo-fence-point?api_key=API_KEY&latitude=23.76245538673939&longitude=90.37852866512583&name=Songsodh vaban&radius=70"
+
+            payload={}
+            files={}
+            headers = {}
+
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+            print(response.text)
+
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+            var FormData = require('form-data');
+            var data = new FormData();
+
+            var config = {
+              method: 'post',
+              url: 'https://barikoi.xyz/v2/api/set-geo-fence-point?api_key=API_KEY&latitude=23.76245538673939&longitude=90.37852866512583&name=Songsodh vaban&radius=70',
+              headers: { 
+                ...data.getHeaders()
+              },
+              data : data
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/add_point_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/add_point_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"
+
+# Get geo fence points v2
+  /v2/api/get-geo-fence-points:
+    get:
+      operationId: get-geo-fence-points
+      tags:
+        - v2.0
+      summary: Get geo fence points
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request GET 'https://barikoi.xyz/v2/api/get-geo-fence-points?api_key=API_KEY'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/get-geo-fence-points?api_key=API_KEY"
+
+            payload={}
+            headers = {}
+
+            response = requests.request("GET", url, headers=headers, data=payload)
+
+            print(response.text)
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+              url: 'https://barikoi.xyz/v2/api/get-geo-fence-points?api_key=API_KEY',
+              headers: { }
+            };
+
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/get_point_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/get_point_success"
         "400":
           $ref: "#/components/responses/missing_parameter"
         "401":
@@ -2195,7 +2344,11 @@ components:
     industrialParam:
       $ref: params/industrial.yaml
     wardParam:
-      $ref: params/ward.yaml
+      $ref: params/ward.yaml   
+    nameParam:
+      $ref: params/nameParam.yaml    
+    radiusParam:
+      $ref: params/radiusParam.yaml
 
   # Schemas
   schemas:
@@ -2262,7 +2415,12 @@ components:
     point_in_polygon_success:
       $ref: schemas/point_in_polygon_success.yaml
     area_success:
-      $ref: schemas/area_success.yaml
+      $ref: schemas/area_success.yaml     
+    add_point_success:
+      $ref: schemas/add_point_success.yaml
+    get_point_success:
+      $ref: schemas/get_point_success.yaml
+    
 
   # Responses
   responses:
@@ -2322,3 +2480,7 @@ components:
       $ref: responses/point_in_polygon_success.yaml
     area_success:
       $ref: responses/area_success.yaml
+    add_point_success:
+      $ref: responses/add_point_success.yaml
+    get_point_success:
+      $ref: responses/get_point_success.yaml
