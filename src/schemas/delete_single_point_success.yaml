@@ -1,0 +1,8 @@
+type: object
+properties:
+  message:
+    type: string
+    example: Geo fence point deleted
+  status:
+    type: integer
+    default: 200

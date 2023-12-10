@@ -1,0 +1,5 @@
+description: check_geo_fence_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/check_geo_fence_success.yaml

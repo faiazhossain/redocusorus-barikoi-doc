@@ -2391,6 +2391,145 @@ paths:
         "402":
           $ref: "#/components/responses/payment_exception"
         "429":
+          $ref: "#/components/responses/api_limit_exceeded"  
+  # Delete single geo fence point v2
+  /v2/api/delete-geo-fence-point/id:
+    delete:
+      operationId: delete-geo-fence-point
+      tags:
+        - v2.0
+      summary: Delete Geofence point by id
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/radiusParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+           curl --location --request DELETE 'https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55"
+            
+            payload={}
+            headers = {}
+            
+            response = requests.request("DELETE", url, headers=headers, data=payload)
+            
+            print(response.text)
+          
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'delete',
+              url: 'https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55',
+              headers: { }
+            };
+            
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+          
+            
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/delete_single_point_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/delete_single_point_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
+          $ref: "#/components/responses/api_limit_exceeded"  
+  # Check geo fence v2
+  /v2/api/check-geo-fence:
+    get:
+      operationId: check-geo-fence
+      tags:
+        - v2.0
+      summary: Check geo fence
+
+      parameters:
+        - $ref: "#/components/parameters/api_keyParam"
+        - $ref: "#/components/parameters/longitudeParam"
+        - $ref: "#/components/parameters/latitudeParam"
+
+      x-code-samples:
+        - lang: Curl
+          source: |
+            curl --location --request GET 'https://barikoi.xyz/v2/api/check-geo-fence?api_key=API_KEY&latitude=23.762412943322726&longitude=90.37864864706823'
+
+        - lang: Python
+          source: |
+            import requests
+
+            url = "https://barikoi.xyz/v2/api/check-geo-fence?api_key=API_KEY&latitude=23.762412943322726&longitude=90.37864864706823"
+            
+            payload={}
+            headers = {}
+            
+            response = requests.request("GET", url, headers=headers, data=payload)
+            
+            print(response.text)
+          
+          
+
+        - lang: Node
+          source: |
+            var axios = require('axios');
+
+            var config = {
+              method: 'get',
+              url: 'https://barikoi.xyz/v2/api/check-geo-fence?api_key=API_KEY&latitude=23.762412943322726&longitude=90.37864864706823',
+              headers: { }
+            };
+            
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+            
+          
+            
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/check_geo_fence_success"
+
+      responses:
+        "200":
+          $ref: "#/components/responses/check_geo_fence_success"
+        "400":
+          $ref: "#/components/responses/missing_parameter"
+        "401":
+          $ref: "#/components/responses/no_registered_key"
+        "402":
+          $ref: "#/components/responses/payment_exception"
+        "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
 
@@ -2558,6 +2697,10 @@ components:
       $ref: schemas/get_single_point_success.yaml
     update_single_point_success:
       $ref: schemas/update_single_point_success.yaml
+    delete_single_point_success:
+      $ref: schemas/delete_single_point_success.yaml
+    check_geo_fence_success:
+      $ref: schemas/check_geo_fence_success.yaml
     
 
   # Responses
@@ -2626,3 +2769,7 @@ components:
       $ref: responses/get_single_point_success.yaml    
     update_single_point_success:
       $ref: responses/update_single_point_success.yaml
+    delete_single_point_success:
+      $ref: responses/delete_single_point_success.yaml    
+    check_geo_fence_success:
+      $ref: responses/check_geo_fence_success.yaml

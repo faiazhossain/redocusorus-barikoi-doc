@@ -1,0 +1,5 @@
+description: delete_point_success
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/delete_single_point_success.yaml

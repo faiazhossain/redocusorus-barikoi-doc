@@ -1,0 +1,29 @@
+type: object
+properties:
+  message:
+    type: string
+    example: Inside geo fence
+  status:
+    type: integer
+    default: 200
+  data:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: "635085"
+        name:
+          type: string
+          example: "Songsodh vaban"
+        radius:
+          type: string
+          example: "55"
+        longitude:
+          type: string
+          example: "90.37852866512583"
+        latitude:
+          type: string
+          example: "23.76245538673939"        
+        user_id:
+          type: number
+          example: 2978
