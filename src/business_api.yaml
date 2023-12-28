@@ -511,19 +511,23 @@ paths:
       parameters:
         - $ref: "#/components/parameters/api_keyPathParam"
         - $ref: "#/components/parameters/coordinatesParam"
-
+        - $ref: "#/components/parameters/geometriesParam"
       x-code-samples:
         - lang: Curl
           source: |
-            curl --location 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204'
+            curl --location --request GET 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?geometries=polyline'
 
         - lang: Python
           source: |
             import requests
-            url = "https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204"
+
+            url = "https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?geometries=polyline"
+
             payload={}
             headers = {}
+
             response = requests.request("GET", url, headers=headers, data=payload)
+
             print(response.text)
 
         - lang: Node
@@ -531,8 +535,7 @@ paths:
             var axios = require('axios');
             var config = {
               method: 'get',
-              maxBodyLength: Infinity,
-              url: 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204',
+              url: 'https://barikoi.xyz/v1/api/route/API_KEY/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?geometries=polyline',
               headers: { }
             };
             axios(config)
@@ -1205,6 +1208,7 @@ paths:
         - $ref: "#/components/parameters/api_keyParam"
         - $ref: "#/components/parameters/qParam"
         - $ref: "#/components/parameters/cityParam"
+        - $ref: "#/components/parameters/areaParamString"
         - $ref: "#/components/parameters/banglaParam"
 
       x-code-samples:
@@ -1361,7 +1365,6 @@ paths:
             headers = {}            
             response = requests.request("POST", url, headers=headers, data=payload, files=files)            
             print(response.text)
-          
 
         - lang: Node
           source: |
@@ -1371,7 +1374,7 @@ paths:
             data.append('q', 'হাউস ১৮, রোড ৫, ব্লক জি, সেকশন ২ মিরপুর');
             data.append('q2', 'house 18, road 5, block j, section 2, mirpur');
             data.append('match', 'yes');
-            
+
             var config = {
               method: 'post',
             maxBodyLength: Infinity,
@@ -1381,7 +1384,7 @@ paths:
               },
               data : data
             };
-            
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -1389,7 +1392,6 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
-          
 
       requestBody:
         required: true
@@ -1421,30 +1423,36 @@ paths:
       parameters:
         - $ref: "#/components/parameters/api_keyParam"
         - $ref: "#/components/parameters/coordinatesParam"
+        - $ref: "#/components/parameters/geometriesParam"
 
       x-code-samples:
         - lang: Curl
           source: |
-            curl --location 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY'
+            curl --location --request GET 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key={{API_KEY}}&geometries=polyline'
 
         - lang: Python
           source: |
             import requests
-            url = "https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY"
+
+            url = "https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key={{API_KEY}}&geometries=polyline"
+
             payload={}
             headers = {}
+
             response = requests.request("GET", url, headers=headers, data=payload)
+
             print(response.text)
 
         - lang: Node
           source: |
             var axios = require('axios');
+
             var config = {
               method: 'get',
-              maxBodyLength: Infinity,
-              url: 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key=API_KEY',
+              url: 'https://barikoi.xyz/v2/api/route/90.362548828125,23.94107556246209;90.31585693359375,24.134221690669204?api_key={{API_KEY}}&geometries=polyline',
               headers: { }
             };
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -2111,7 +2119,7 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
-# Geofencing Business
+  # Geofencing Business
 
   # Point in polygon v2
   /v2/api/set-geo-fence-point:
@@ -2119,7 +2127,7 @@ paths:
       operationId: set-geo-fence-point
       tags:
         - v2.0
-        
+
       summary: Set geofence point
 
       parameters:
@@ -2148,7 +2156,6 @@ paths:
 
             print(response.text)
 
-
         - lang: Node
           source: |
             var axios = require('axios');
@@ -2172,7 +2179,6 @@ paths:
               console.log(error);
             });
 
-
       requestBody:
         required: true
         content:
@@ -2192,7 +2198,7 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
-# Get all geo fence points v2
+  # Get all geo fence points v2
   /v2/api/get-geo-fence-points:
     get:
       operationId: get-geo-fence-points
@@ -2239,8 +2245,6 @@ paths:
               console.log(error);
             });
 
-
-
       requestBody:
         required: true
         content:
@@ -2260,7 +2264,7 @@ paths:
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
 
-# Get single geo fence points v2
+  # Get single geo fence points v2
   /v2/api/get-geo-fence-points/id:
     get:
       operationId: get-single-geo-fence-points
@@ -2281,14 +2285,13 @@ paths:
             import requests
 
             url = "https://barikoi.xyz/v2/api/get-geo-fence-point/65475dbad1e00?api_key=API_KEY"
-            
+
             payload={}
             headers = {}
-            
+
             response = requests.request("GET", url, headers=headers, data=payload)
-            
+
             print(response.text)
-          
 
         - lang: Node
           source: |
@@ -2299,7 +2302,7 @@ paths:
               url: 'https://barikoi.xyz/v2/api/get-geo-fence-point/65475dbad1e00?api_key=API_KEY',
               headers: { }
             };
-            
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -2307,9 +2310,6 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
-          
-
-
 
       requestBody:
         required: true
@@ -2351,14 +2351,13 @@ paths:
             import requests
 
             url = "https://barikoi.xyz/v2/api/update-geo-fence-point/65475dbad1e00?api_key=API_KEY&radius=55"
-            
+
             payload={}
             headers = {}
-            
+
             response = requests.request("POST", url, headers=headers, data=payload)
-            
+
             print(response.text)
-          
 
         - lang: Node
           source: |
@@ -2369,7 +2368,7 @@ paths:
               url: 'https://barikoi.xyz/v2/api/update-geo-fence-point/65475dbad1e00?api_key=bkoi_326d7b6ff0d175d799c33dd993b5ef69230466b5b3cf7c7bec08e63a0ad67bec&radius=55',
               headers: { }
             };
-            
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -2377,8 +2376,7 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
-          
-            
+
       requestBody:
         required: true
         content:
@@ -2396,7 +2394,7 @@ paths:
         "402":
           $ref: "#/components/responses/payment_exception"
         "429":
-          $ref: "#/components/responses/api_limit_exceeded"  
+          $ref: "#/components/responses/api_limit_exceeded"
   # Delete single geo fence point v2
   /v2/api/delete-geo-fence-point/id:
     delete:
@@ -2412,21 +2410,20 @@ paths:
       x-code-samples:
         - lang: Curl
           source: |
-           curl --location --request DELETE 'https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55'
+            curl --location --request DELETE 'https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55'
 
         - lang: Python
           source: |
             import requests
 
             url = "https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55"
-            
+
             payload={}
             headers = {}
-            
+
             response = requests.request("DELETE", url, headers=headers, data=payload)
-            
+
             print(response.text)
-          
 
         - lang: Node
           source: |
@@ -2437,7 +2434,7 @@ paths:
               url: 'https://barikoi.xyz/v2/api/delete-geo-fence-point/65473a46ad910?api_key=API_KEY&radius=55',
               headers: { }
             };
-            
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -2445,8 +2442,7 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
-          
-            
+
       requestBody:
         required: true
         content:
@@ -2464,7 +2460,7 @@ paths:
         "402":
           $ref: "#/components/responses/payment_exception"
         "429":
-          $ref: "#/components/responses/api_limit_exceeded"  
+          $ref: "#/components/responses/api_limit_exceeded"
   # Check geo fence v2
   /v2/api/check-geo-fence:
     get:
@@ -2488,15 +2484,13 @@ paths:
             import requests
 
             url = "https://barikoi.xyz/v2/api/check-geo-fence?api_key=API_KEY&latitude=23.762412943322726&longitude=90.37864864706823"
-            
+
             payload={}
             headers = {}
-            
+
             response = requests.request("GET", url, headers=headers, data=payload)
-            
+
             print(response.text)
-          
-          
 
         - lang: Node
           source: |
@@ -2507,7 +2501,7 @@ paths:
               url: 'https://barikoi.xyz/v2/api/check-geo-fence?api_key=API_KEY&latitude=23.762412943322726&longitude=90.37864864706823',
               headers: { }
             };
-            
+
             axios(config)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
@@ -2515,9 +2509,7 @@ paths:
             .catch(function (error) {
               console.log(error);
             });
-            
-          
-            
+
       requestBody:
         required: true
         content:
@@ -2536,7 +2528,6 @@ paths:
           $ref: "#/components/responses/payment_exception"
         "429":
           $ref: "#/components/responses/api_limit_exceeded"
-
 
 # Components
 components:
@@ -2587,6 +2578,8 @@ components:
       $ref: params/address.yaml
     areaParam:
       $ref: params/area.yaml
+    areaParamString:
+      $ref: params/areaString.yaml
     banglaParam:
       $ref: params/bangla.yaml
     distanceParam:
@@ -2622,9 +2615,9 @@ components:
     industrialParam:
       $ref: params/industrial.yaml
     wardParam:
-      $ref: params/ward.yaml   
+      $ref: params/ward.yaml
     nameParam:
-      $ref: params/nameParam.yaml    
+      $ref: params/nameParam.yaml
     radiusParam:
       $ref: params/radiusParam.yaml
 
@@ -2693,7 +2686,7 @@ components:
     point_in_polygon_success:
       $ref: schemas/point_in_polygon_success.yaml
     area_success:
-      $ref: schemas/area_success.yaml     
+      $ref: schemas/area_success.yaml
     add_point_success:
       $ref: schemas/add_point_success.yaml
     get_point_success:
@@ -2706,7 +2699,6 @@ components:
       $ref: schemas/delete_single_point_success.yaml
     check_geo_fence_success:
       $ref: schemas/check_geo_fence_success.yaml
-    
 
   # Responses
   responses:
@@ -2771,10 +2763,10 @@ components:
     get_point_success:
       $ref: responses/get_point_success.yaml
     get_single_point_success:
-      $ref: responses/get_single_point_success.yaml    
+      $ref: responses/get_single_point_success.yaml
     update_single_point_success:
       $ref: responses/update_single_point_success.yaml
     delete_single_point_success:
-      $ref: responses/delete_single_point_success.yaml    
+      $ref: responses/delete_single_point_success.yaml
     check_geo_fence_success:
       $ref: responses/check_geo_fence_success.yaml
