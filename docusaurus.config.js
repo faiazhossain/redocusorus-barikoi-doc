@@ -101,6 +101,15 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
+        id: "npm",
+        path: "npm",
+        routeBasePath: "npm",
+        sidebarPath: require.resolve("./sidebars.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
         id: "flutter",
         path: "flutter",
         routeBasePath: "flutter",
@@ -127,6 +136,10 @@ const config = {
           {
             to: "/android/android-intro",
             label: "Android",
+            position: "left",
+          },{
+            to: "/npm/npm-intro",
+            label: "Npm",
             position: "left",
           },
           {

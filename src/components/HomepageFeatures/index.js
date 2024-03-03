@@ -52,9 +52,9 @@ export default function HomepageFeatures() {
               style={{
                 ...Buttonstyle,
               }}
-              to="/pricing/pricing-call"
+              to="/npm/npm-intro"
             >
-              PRICING
+              NPM LIBRARY
             </Link>
           </Col>
           <Col
@@ -68,7 +68,20 @@ export default function HomepageFeatures() {
               to="/Flutter/Barikoi Map Flutter/flutter-intro"
             >
               {" "}
-              Flutter Library
+              FLUTTER
+            </Link>
+          </Col>
+          <Col
+            className={`"gutter-row"`}
+            style={{ textAlign: "center", marginBottom: "10px" }}
+          >
+            <Link
+              style={{
+                ...Buttonstyle,
+              }}
+              to="/pricing/pricing-call"
+            >
+              PRICING
             </Link>
           </Col>
         </Row>
@@ -95,7 +108,7 @@ const grid_center = {
 const Buttonstyle = {
   background: "#00b96b",
   color: "white",
-  padding: "9px 14px",
+  padding: "7px 12px",
   borderRadius: "12px",
   textDecoration: "none",
 };
